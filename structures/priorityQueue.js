@@ -68,12 +68,18 @@ class PriorityQueueMaxHeap extends PriorityQueueMax {
     sink(k) {
         while (2 * k < this.queue.length) {
             let j = 2 * k;
+
+            // find the biggest child of K-node
             if (j < this.queue.length - 1 && this.less(j, j + 1)) {
                 j++;
             }
+
+            // check and if K-node bigger than biggest of children we end
             if (!this.less(k, j)) {
                 break;
             }
+
+            // otherwise exchange parent with the biggest child
             this.exch(j, k);
             k = j;
         }
