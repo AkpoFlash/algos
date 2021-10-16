@@ -13,7 +13,7 @@ class PriorityQueueMax {
 
 // unordered priority queue
 // insert O(1)
-// delMax O(N logN)
+// delMax O(N)
 class PriorityQueueMaxUnordered extends PriorityQueueMax {
     insert(item) {
         this.queue.push(item);
@@ -32,7 +32,7 @@ class PriorityQueueMaxUnordered extends PriorityQueueMax {
 }
 
 // ordered priority queue
-// insert O(N logN)
+// insert O(N)
 // delMax O(1)
 class PriorityQueueMaxOrdered extends PriorityQueueMax {
     insert(item) {
