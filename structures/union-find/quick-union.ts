@@ -2,15 +2,20 @@ class QuickUnion {
     // this is array which contain the components IDs
     // (component it is the entity with connected nodes)
     ids: number[] = [];
+    size: number[] = [];
 
     constructor(n: number) {
         for (let i = 0; i < n; i++) {
             this.ids[i] = i;
+            this.size[i] = 0;
         }
     }
 
     root(i: number) {
         while (i != this.ids[i]) {
+            // here is the interesting trick
+            // the line below compress the tree and maintained the smallest possible tree
+            this.ids[i] = this.ids[this.ids[i]];
             i = this.ids[i];
         }
         return i;
@@ -25,7 +30,18 @@ class QuickUnion {
     union(a: number, b: number) {
         const rootA = this.root(a);
         const rootB = this.root(b);
-        this.ids[rootA] = rootB;
+
+        // simple solution just assign new root
+        // `this.ids[rootB] = rootA;`
+        // but more clever solution check the size of trees and merge the small one to the big one
+        if(this.size[rootA] > this.size[rootB]){
+            this.ids[rootB] = rootA;
+            this.size[rootA] += this.size[rootB];
+        }
+        else{
+            this.ids[rootA] = rootB;
+            this.size[rootB] += this.size[rootA];
+        }
     }
 }
 
