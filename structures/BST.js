@@ -74,16 +74,16 @@ class BST {
         return result ? result : null;
     }
 
-    _ceil(node, key){
-        if(!node){
+    _ceil(node, key) {
+        if (!node) {
             return null;
         }
 
-        if(key === node.key){
+        if (key === node.key) {
             return node;
         }
 
-        if(key > node.key){
+        if (key > node.key) {
             return this._ceil(node.right, key);
         }
 
@@ -91,38 +91,38 @@ class BST {
         return nodeLeft ? nodeLeft : node;
     }
 
-    size(node){
+    size(node) {
         return node ? node.count : 0;
     }
 
-    rank(key){
+    rank(key) {
         return this._rank(this.root, key);
     }
 
-    _rank(node, key){
-        if(!node){
+    _rank(node, key) {
+        if (!node) {
             return 0;
         }
 
-        if(key < node.key){
+        if (key < node.key) {
             return this._rank(node.left, key);
         }
-        if(key > node.key){
+        if (key > node.key) {
             return 1 + this.size(node.left) + this._rank(node.right, key);
         }
-        if(key === node.key){
+        if (key === node.key) {
             return this.size(node.left);
         }
     }
 
-    keys(){
+    keys() {
         const result = [];
         this._inorder(this.root, result);
         return result;
     }
 
-    _inorder(node, result){
-        if(!node){
+    _inorder(node, result) {
+        if (!node) {
             return null;
         }
         this._inorder(node.left, result);
@@ -134,8 +134,8 @@ class BST {
         this.root = this._deleteMin(this.root);
     }
 
-    _deleteMin(node){
-        if(!node.left){
+    _deleteMin(node) {
+        if (!node.left) {
             return node.right;
         }
         node.left = this._deleteMin(node.left);
@@ -147,20 +147,20 @@ class BST {
         this.root = this._delete(key, this.root);
     }
 
-    _delete(key, node){
-        if(!node){
+    _delete(key, node) {
+        if (!node) {
             return null;
         }
 
-        if(key < node.key){
+        if (key < node.key) {
             node.left = this._delete(key, node.left);
         }
-        else if(key > node.key){
+        else if (key > node.key) {
             node.right = this._delete(key, node.right);
         }
         else {
-            if(!node.right) return node.left;
-            if(!node.left) return node.right;
+            if (!node.right) return node.left;
+            if (!node.left) return node.right;
 
             let nodeMinSuccessor = node;
             node = this.min(nodeMinSuccessor.right);
