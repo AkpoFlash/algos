@@ -38,8 +38,8 @@ class PriorityQueueMaxOrdered extends PriorityQueueMax {
     insert(item) {
         this.queue.push(item);
         let i = this.queue.length - 1;
-        for (let j = i-1; this.less(i,j); j--, i--) {
-            this.exch(i,j);
+        for (let j = i - 1; this.less(i, j); j--, i--) {
+            this.exch(i, j);
         }
     }
 

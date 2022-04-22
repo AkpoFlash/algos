@@ -2,7 +2,7 @@ class RedBlackBST {
     root;
 
     // Here are red black specific inner methods
-    _rotateLeft(node){
+    _rotateLeft(node) {
         const rotatedNode = node.right;
         node.right = rotatedNode.left;
         rotatedNode.left = node;
@@ -11,7 +11,7 @@ class RedBlackBST {
         return rotatedNode;
     }
 
-    _rotateRight(node){
+    _rotateRight(node) {
         const rotatedNode = node.left;
         node.left = rotatedNode.right;
         rotatedNode.right = node;
@@ -20,14 +20,14 @@ class RedBlackBST {
         return rotatedNode;
     }
 
-    _flipColors(node){
+    _flipColors(node) {
         node.isRed = true;
         node.left.isRed = false;
         node.right.isRed = false;
         return node;
     }
 
-    _isRed(node){
+    _isRed(node) {
         return node ? node.isRed : false;
     }
 
@@ -62,13 +62,13 @@ class RedBlackBST {
         } else if (key === node.key) {
             node.value = value;
         }
-        if(this._isRed(node.right) && !this._isRed(node.left)) {
+        if (this._isRed(node.right) && !this._isRed(node.left)) {
             node = this._rotateLeft(node);
         }
-        if(this._isRed(node.left) && this._isRed(node.left.left)){
+        if (this._isRed(node.left) && this._isRed(node.left.left)) {
             node = this._rotateRight(node);
         }
-        if(this._isRed(node.left) && this._isRed(node.right)){
+        if (this._isRed(node.left) && this._isRed(node.right)) {
             node = this._flipColors(node);
         }
         node.count = 1 + this.size(node.left) + this.size(node.right);
@@ -115,16 +115,16 @@ class RedBlackBST {
         return result ? result : null;
     }
 
-    _ceil(node, key){
-        if(!node){
+    _ceil(node, key) {
+        if (!node) {
             return null;
         }
 
-        if(key === node.key){
+        if (key === node.key) {
             return node;
         }
 
-        if(key > node.key){
+        if (key > node.key) {
             return this._ceil(node.right, key);
         }
 
@@ -132,38 +132,38 @@ class RedBlackBST {
         return nodeLeft ? nodeLeft : node;
     }
 
-    size(node){
+    size(node) {
         return node ? node.count : 0;
     }
 
-    rank(key){
+    rank(key) {
         return this._rank(this.root, key);
     }
 
-    _rank(node, key){
-        if(!node){
+    _rank(node, key) {
+        if (!node) {
             return 0;
         }
 
-        if(key < node.key){
+        if (key < node.key) {
             return this._rank(node.left, key);
         }
-        if(key > node.key){
+        if (key > node.key) {
             return 1 + this.size(node.left) + this._rank(node.right, key);
         }
-        if(key === node.key){
+        if (key === node.key) {
             return this.size(node.left);
         }
     }
 
-    keys(){
+    keys() {
         const result = [];
         this._inorder(this.root, result);
         return result;
     }
 
-    _inorder(node, result){
-        if(!node){
+    _inorder(node, result) {
+        if (!node) {
             return null;
         }
         this._inorder(node.left, result);
@@ -175,8 +175,8 @@ class RedBlackBST {
         this.root = this._deleteMin(this.root);
     }
 
-    _deleteMin(node){
-        if(!node.left){
+    _deleteMin(node) {
+        if (!node.left) {
             return node.right;
         }
         node.left = this._deleteMin(node.left);
@@ -188,20 +188,20 @@ class RedBlackBST {
         this.root = this._delete(key, this.root);
     }
 
-    _delete(key, node){
-        if(!node){
+    _delete(key, node) {
+        if (!node) {
             return null;
         }
 
-        if(key < node.key){
+        if (key < node.key) {
             node.left = this._delete(key, node.left);
         }
-        else if(key > node.key){
+        else if (key > node.key) {
             node.right = this._delete(key, node.right);
         }
         else {
-            if(!node.right) return node.left;
-            if(!node.left) return node.right;
+            if (!node.right) return node.left;
+            if (!node.left) return node.right;
 
             let nodeMinSuccessor = node;
             node = this.min(nodeMinSuccessor.right);
