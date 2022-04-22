@@ -18,13 +18,13 @@ class QuickFind {
         const ida = this.ids[a];
         const idb = this.ids[b];
 
-        if(this.connected(a, b)){
+        if (this.connected(a, b)) {
             return;
         }
 
-        for(let i = 0; i < this.ids.length; i++){
+        for (let i = 0; i < this.ids.length; i++) {
             // here is we change all ID from first component (A) to the second (B), becouse now they connected
-            if(this.ids[i] === ida){
+            if (this.ids[i] === ida) {
                 this.ids[i] = idb;
             }
         }
