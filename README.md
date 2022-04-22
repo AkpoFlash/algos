@@ -8,6 +8,7 @@
 - Heap
 
 ## Structures
+- Union-find
 - Priority Queue (Heap)
 - BST (Binary search tree)
 - Red-black BST
