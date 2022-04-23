@@ -1,6 +1,8 @@
+import { Maybe } from '../../utils/types';
+
 namespace StackLinkedList {
     class Stack<T> {
-        first: Item<T> | null | undefined;
+        first: Maybe<Item<T>>;
 
         public push(item: T) {
             const oldItem = this.first;
@@ -16,17 +18,17 @@ namespace StackLinkedList {
 
     type Item<T> = {
         item: T;
-        next: Item<T> | null | undefined;
+        next: Maybe<Item<T>>;
     }
 
     // Example of usage:
 
     const stack = new Stack<string>();
-    stack.push("first");
-    stack.push("second");
+    stack.push('first');
+    stack.push('second');
     console.log(stack.pop()); // -> second
     console.log(stack.pop()); // -> first
     console.log(stack.pop()); // -> undefined
-    stack.push("third");
+    stack.push('third');
     console.log(stack.pop()); // -> third
 }
