@@ -12,6 +12,8 @@
 - [Union-find (Quick union)](./structures/union-find/quick-union.ts)
 - [Stack (Linked list)](./structures/stack/stackLinkedList.ts)
 - [Stack (Array)](./structures/stack/stackArray.ts)
+- [Queue (Linked list)](./structures/queue/queueLinkedList.ts)
+- [Queue (Array)](./structures/queue/queueArray.ts)
 - [Priority Queue (Heap)](./structures/priorityQueue.js)
 - [BST (Binary search tree)](./structures/BST.js)
 - [Red-black BST](./structures/redBlackBST.js)
