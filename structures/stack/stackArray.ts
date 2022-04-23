@@ -17,11 +17,11 @@ namespace StackArray {
     // Example of usage:
 
     const stack = new Stack<string>();
-    stack.push("first");
-    stack.push("second");
+    stack.push('first');
+    stack.push('second');
     console.log(stack.pop()); // -> second
     console.log(stack.pop()); // -> first
     console.log(stack.pop()); // -> undefined
-    stack.push("third");
+    stack.push('third');
     console.log(stack.pop()); // -> third
 }
