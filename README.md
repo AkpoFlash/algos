@@ -1,8 +1,8 @@
 # algos
 
 ## Sorts
-- [Select](./sorts/selectSort.js)
-- [Insert](./sorts/insertSort.js)
+- [Select](./sorts/selectSort.ts)
+- [Insert](./sorts/insertSort.ts)
 - [Merge](./sorts/mergeSort.js)
 - [Quick](./sorts/quickSort.js)
 - [Heap](./sorts/heapSort.js)
