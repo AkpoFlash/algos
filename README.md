@@ -3,6 +3,7 @@
 ## Sorts
 - [Select](./sorts/selectSort.ts)
 - [Insert](./sorts/insertSort.ts)
+- [Shell](./sorts/shellSort.ts)
 - [Merge](./sorts/mergeSort.js)
 - [Quick](./sorts/quickSort.js)
 - [Heap](./sorts/heapSort.js)
