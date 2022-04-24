@@ -1,6 +1,6 @@
 namespace InsertSort {
     /**
-     * Compolexity of this sort ~1/4N^2 and this complexuty depends on input array
+     * Complexity of this sort ~1/4N^2 and this complexuty depends on input array
      * Especially effective with partialy sorted array or already sorted array and have linear (~N) complexity
      * 
      * @param arr init unsorted array

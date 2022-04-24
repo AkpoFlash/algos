@@ -1,6 +1,6 @@
 namespace SelectSort {
     /**
-     * Compolexity of this sort ~1/2N^2 and this complexuty doesn't depend on input array
+     * Complexity of this sort ~1/2N^2 and this complexuty doesn't depend on input array
      * 
      * @param arr init unsorted array
      * @returns sorted array (in place)
