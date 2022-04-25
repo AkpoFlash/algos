@@ -1,4 +1,4 @@
-class BST {
+export class BST {
     root;
 
     get(key) {

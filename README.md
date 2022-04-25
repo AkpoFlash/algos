@@ -18,3 +18,6 @@
 - [Priority Queue (Heap)](./structures/priorityQueue.js)
 - [BST (Binary search tree)](./structures/BST.js)
 - [Red-black BST](./structures/redBlackBST.js)
+
+## Utils
+- [Linear time Shiffling](./utils/shuffle.ts)
