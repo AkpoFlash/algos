@@ -1,6 +1,6 @@
 const a = [5, 4, 2, 1, 0, 6, 1, 2, 1];
 
-const heapSort = (arr) => {
+export const heapSort = (arr) => {
     let N = arr.length - 1;
 
     const sink = (k, N) => {

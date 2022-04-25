@@ -1,1 +1,5 @@
 .idea
+*.tsbuildinfo
+.DS_Store
+build/
+node_modules/

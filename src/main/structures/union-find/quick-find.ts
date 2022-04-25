@@ -1,4 +1,4 @@
-class QuickFind {
+export class QuickFind {
     // this is array which contain the components IDs
     // (component it is the entity with connected nodes)
     ids: number[] = [];
