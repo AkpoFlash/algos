@@ -2,6 +2,10 @@ export class StackArray<T> {
     stack: (T | undefined)[] = [];
     size = 0;
 
+    public isEmpty(){
+        return !this.size;
+    }
+
     public push(item: T) {
         this.stack[this.size++] = item;
     }

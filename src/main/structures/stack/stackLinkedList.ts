@@ -1,7 +1,11 @@
 import { Maybe } from '../../utils/types';
 
 export class StackLinkedList<T> {
-    first: Maybe<Item<T>>;
+    first: Maybe<Item<T>> = null;
+
+    public isEmpty(){
+        return this.first === null;
+    }
 
     public push(item: T) {
         const oldItem = this.first;
