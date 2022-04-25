@@ -1,23 +1,24 @@
 # algos
 
 ## Sorts
-- [Select](./sorts/selectSort.ts)
-- [Insert](./sorts/insertSort.ts)
-- [Shell](./sorts/shellSort.ts)
-- [Merge](./sorts/mergeSort.js)
-- [Quick](./sorts/quickSort.js)
-- [Heap](./sorts/heapSort.js)
+- [Select](./src/main/sorts/selectSort.ts)
+- [Insert](./src/main/sorts/insertSort.ts)
+- [Shell](./src/main/sorts/shellSort.ts)
+- [Merge (Recurring)](./src/main/sorts/merge/mergeSortUpBottom.ts)
+- [Merge (Non-recurring)](./src/main/sorts/merge/mergeSortBottomUp.ts)
+- [Quick](./src/main/sorts/quickSort.js)
+- [Heap](./src/main/sorts/heapSort.js)
 
 ## Structures
-- [Union-find (Quick find)](./structures/union-find/quick-find.ts)
-- [Union-find (Quick union)](./structures/union-find/quick-union.ts)
-- [Stack (Linked list)](./structures/stack/stackLinkedList.ts)
-- [Stack (Array)](./structures/stack/stackArray.ts)
-- [Queue (Linked list)](./structures/queue/queueLinkedList.ts)
-- [Queue (Array)](./structures/queue/queueArray.ts)
-- [Priority Queue (Heap)](./structures/priorityQueue.js)
-- [BST (Binary search tree)](./structures/BST.js)
-- [Red-black BST](./structures/redBlackBST.js)
+- [Union-find (Quick find)](./src/main/structures/union-find/quick-find.ts)
+- [Union-find (Quick union)](./src/main/structures/union-find/quick-union.ts)
+- [Stack (Linked list)](./src/main/structures/stack/stackLinkedList.ts)
+- [Stack (Array)](./src/main/structures/stack/stackArray.ts)
+- [Queue (Linked list)](./src/main/structures/queue/queueLinkedList.ts)
+- [Queue (Array)](./src/main/structures/queue/queueArray.ts)
+- [Priority Queue (Heap)](./src/main/structures/priorityQueue.js)
+- [BST (Binary search tree)](./src/main/structures/BST.js)
+- [Red-black BST](./src/main/structures/redBlackBST.js)
 
 ## Utils
-- [Linear time Shiffling](./utils/shuffle.ts)
+- [Linear time Shiffling](./src/main/utils/shuffle.ts)
