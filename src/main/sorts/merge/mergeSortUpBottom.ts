@@ -1,12 +1,12 @@
 /**
  * This is recurring algorithm
- * Time complexity of this sort ~NlogN
+ * This sort is stable, time complexity of this sort ~NlogN
  * Memory complexity of this sort proportinal to ~N, because we use auxiliary array
  * 
  * @param arr init unsorted array
  * @returns sorted array (pseudo in place)
  */
- export const mergeSortUpBottom = <T>(arr: T[]) => {
+export const mergeSortUpBottom = <T>(arr: T[]) => {
     const aux: T[] = [];
 
     const merge = (arr: T[], aux: T[], lo: number, mid: number, hi: number) => {
@@ -36,7 +36,9 @@
         if (hi <= lo) {
             return;
         }
+
         const mid = Math.floor(lo + (hi - lo) / 2);
+
         sort(arr, aux, lo, mid);
         sort(arr, aux, mid + 1, hi);
         merge(arr, aux, lo, mid, hi);

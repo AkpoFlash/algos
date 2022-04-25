@@ -1,4 +1,5 @@
 /**
+ * This isn't stable sort
  * Complexity of this sort difficult to determine, but it's approximatly ~N^3/2
  * 
  * @param arr init unsorted array

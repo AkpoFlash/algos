@@ -1,6 +1,6 @@
 /**
  * This is non-recurring algorithm
- * Time complexity of this sort ~NlogN
+ * This sort is stable, time complexity of this sort ~NlogN
  * Memory complexity of this sort proportinal to ~N, because we use auxiliary array
  * 
  * @param arr init unsorted array
