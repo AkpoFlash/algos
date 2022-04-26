@@ -6,7 +6,7 @@
 - [Shell](./src/main/sorts/shellSort.ts)
 - [Merge (Recurring)](./src/main/sorts/merge/mergeSortUpBottom.ts)
 - [Merge (Non-recurring)](./src/main/sorts/merge/mergeSortBottomUp.ts)
-- [Quick](./src/main/sorts/quickSort.js)
+- [Quick](./src/main/sorts/quickSort.ts)
 - [Heap](./src/main/sorts/heapSort.js)
 
 ## Structures
