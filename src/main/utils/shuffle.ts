@@ -4,7 +4,7 @@
  * @param arr init unsorted array
  * @returns sorted array (new instance)
  */
-export const shuffleSort = <T>(arr: T[]) => {
+export const shuffleSort = <T>(arr: T[]): T[] => {
     const indexes = arr.map((_, index) => ({ index, val: Math.random() })).sort((a, b) => a.val - b.val);
 
     return indexes.map((item) => arr[item.index]);
@@ -16,12 +16,13 @@ export const shuffleSort = <T>(arr: T[]) => {
  * @param arr init unsorted array
  * @returns sorted array (new instance)
  */
-export const shuffleInsert = <T>(arr: T[]) => {
-    for (let i = 1; i < arr.length; i++) {
+export const shuffleInsert = <T>(arr: T[]): T[] => {
+    const result = [...arr];
+    for (let i = 1; i < result.length; i++) {
         const randomIndex = Math.round(Math.random() * i);
-        [arr[i], arr[randomIndex]] = [arr[randomIndex], arr[i]];
+        [result[i], result[randomIndex]] = [result[randomIndex], result[i]];
     }
-    return arr;
+    return result;
 }
 
 // Example of usage:

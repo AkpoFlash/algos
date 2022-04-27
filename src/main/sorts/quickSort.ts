@@ -1,10 +1,10 @@
-import { shuffleInsert } from "../utils";
+import { shuffleInsert } from '../utils';
 
 /**
  * This is recurring algorithm
  * This sort is unstable, time complexity of this sort ~NlogN
  * 
- * @param arr init unsorted array
+ * @param _arr init unsorted array
  * @returns sorted array (in place)
  */
 export const quickSort = <T>(_arr: T[]) => {

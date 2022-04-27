@@ -1,9 +1,9 @@
-type TestType<T> = {
+type TestDataType<T> = {
     unsorted: T[]
     sorted: T[]
 }
 
-export const UNSORTED_DATA: TestType<string | number>[] = [
+export const SORTING_TEST_DATA: TestDataType<string | number>[] = [
     {
         unsorted: [-1, 100, 24, 0, 1, 0, 23, 11, -23, -21, -1],
         sorted: [-23, -21, -1, -1, 0, 0, 1, 11, 23, 24, 100]
