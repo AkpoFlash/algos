@@ -1,13 +1,13 @@
 # algos
 
 ## Sorts
-- [Select](./src/main/sorts/selectSort.ts)
-- [Insert](./src/main/sorts/insertSort.ts)
-- [Shell](./src/main/sorts/shellSort.ts)
-- [Merge (Recurring)](./src/main/sorts/merge/mergeSortUpBottom.ts)
-- [Merge (Non-recurring)](./src/main/sorts/merge/mergeSortBottomUp.ts)
-- [Quick](./src/main/sorts/quickSort.ts)
-- [Heap](./src/main/sorts/heapSort.js)
+- [Select sort](./src/main/sorts/selectSort.ts)
+- [Insert sort](./src/main/sorts/insertSort.ts)
+- [Shell sort](./src/main/sorts/shellSort.ts)
+- [Merge sort (Recurring)](./src/main/sorts/merge/mergeSortUpBottom.ts)
+- [Merge sort (Non-recurring)](./src/main/sorts/merge/mergeSortBottomUp.ts)
+- [Quick sort](./src/main/sorts/quickSort.ts)
+- [Heap sort](./src/main/sorts/heapSort.js)
 
 ## Structures
 - [Union-find (Quick find)](./src/main/structures/union-find/quick-find.ts)
