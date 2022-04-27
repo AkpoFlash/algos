@@ -22,3 +22,4 @@
 
 ## Utils
 - [Linear time Shiffling](./src/main/utils/shuffle.ts)
+- [Quick select (Kth smallest find)](./src/main/utils/quickSelect.ts)
