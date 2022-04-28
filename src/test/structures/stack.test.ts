@@ -1,6 +1,6 @@
-import { StackArray, StackLinkedList } from '../../main/structures/stack';
+import { StackArray, StackLinkedList } from '../../main/structures';
 
-describe('QueueArray', () => {
+describe('queueArray', () => {
     it('should be empty from scratch', () => {
         const queue = new StackArray<number>();
         expect(queue.isEmpty()).toBe(true);
@@ -33,7 +33,7 @@ describe('QueueArray', () => {
     });
 })
 
-describe('QueueLinkedList', () => {
+describe('queueLinkedList', () => {
     it('should be empty from scratch', () => {
         const queue = new StackLinkedList<number>();
         expect(queue.isEmpty()).toBe(true);

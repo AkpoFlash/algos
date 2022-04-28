@@ -1,6 +1,6 @@
-import { QueueArray, QueueLinkedList } from '../../main/structures/queue';
+import { QueueArray, QueueLinkedList } from '../../main/structures';
 
-describe('QueueArray', () => {
+describe('queueArray', () => {
     it('should be empty from scratch', () => {
         const queue = new QueueArray<number>();
         expect(queue.isEmpty()).toBe(true);
@@ -33,7 +33,7 @@ describe('QueueArray', () => {
     });
 })
 
-describe('QueueLinkedList', () => {
+describe('queueLinkedList', () => {
     it('should be empty from scratch', () => {
         const queue = new QueueLinkedList<number>();
         expect(queue.isEmpty()).toBe(true);
