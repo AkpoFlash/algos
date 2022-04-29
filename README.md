@@ -18,7 +18,7 @@
 - [Queue (Array)](./src/main/structures/queue/queueArray.ts)
 - [Priority Queue (Ordered)](./src/main/structures/priority-queue/priorityQueueOrdered.ts)
 - [Priority Queue (Unordered)](./src/main/structures/priority-queue/priorityQueueUnordered.ts)
-- [Priority Queue (Heap)](./src/main/structures/priorityQueue.js)
+- [Priority Queue (Heap)](./src/main/structures/priority-queue/priorityQueueHeap.ts)
 - [BST (Binary search tree)](./src/main/structures/BST.js)
 - [Red-black BST](./src/main/structures/redBlackBST.js)
 
