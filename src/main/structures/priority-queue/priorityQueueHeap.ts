@@ -6,23 +6,23 @@ export class PriorityQueueHeap<T> {
     size = 0;
 
     private sink = (index: number): void => {
-        let current = index;
-        let child = index ? current * 2 : 1;
+        const maxIndex = this.size - 1;
 
-        while (child < this.size) {
+        while (index * 2 <= maxIndex) {
+            let childIndex = index * 2;
+
             // check witch of child are bigger, then choose it
-            if (child < this.size && this.queue[child] < this.queue[child + 1]) {
-                child = child + 1;
+            if (childIndex < maxIndex && this.queue[childIndex] < this.queue[childIndex + 1]) {
+                childIndex = childIndex + 1;
             }
 
             // check if the child smaller then new item, then replace them
-            if (this.queue[child] < this.queue[current]) {
+            if (this.queue[childIndex] <= this.queue[index]) {
                 break;
             }
 
-            [this.queue[child], this.queue[current]] = [this.queue[current], this.queue[child]];
-            current = child;
-            child = current * 2;
+            [this.queue[childIndex], this.queue[index]] = [this.queue[index], this.queue[childIndex]];
+            index = childIndex;
         }
 
     }
