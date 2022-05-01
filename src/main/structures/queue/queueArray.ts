@@ -3,15 +3,15 @@ export class QueueArray<T> {
     lo = 0;
     hi = 0;
 
-    public isEmpty() {
+    public isEmpty(): boolean {
         return this.hi - this.lo === 0;
     }
 
-    public enqueue(item: T) {
+    public enqueue(item: T): void {
         this.queue[this.hi++] = item;
     }
 
-    public dequeue() {
+    public dequeue(): T | undefined {
         if (this.isEmpty()) {
             return;
         }
@@ -24,7 +24,7 @@ export class QueueArray<T> {
         return item;
     }
 
-    private simpleRebalanceArray() {
+    private simpleRebalanceArray(): void {
         if (this.hi - this.lo === 0) {
             this.lo = 0;
             this.hi = 0;

@@ -5,19 +5,24 @@
  * @param arr init unsorted array
  * @returns sorted array (in place)
  */
-export const heapSort = <T>(arr: T[]) => {
+export const heapSort = <T>(arr: T[]): T[] => {
     let len = arr.length - 1;
 
-    const sink = (index: number) => {
+    const sink = (index: number): void => {
 
         while (index * 2 <= len) {
             let childIndex = index * 2;
+            
+            // check witch of child are bigger, then choose it
             if (childIndex < len && arr[childIndex] < arr[childIndex + 1]) {
                 childIndex = childIndex + 1;
             }
+
+            // check if the child smaller then new item, then replace them
             if (arr[childIndex] <= arr[index]) {
                 break;
             }
+            
             [arr[index], arr[childIndex]] = [arr[childIndex], arr[index]];
             index = childIndex;
         }

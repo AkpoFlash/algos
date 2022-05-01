@@ -11,7 +11,7 @@ export class QuickUnion {
         }
     }
 
-    root(i: number) {
+    root(i: number): number {
         while (i != this.ids[i]) {
             // here is the interesting trick
             // the line below compress the tree and maintained the smallest possible tree
@@ -21,24 +21,24 @@ export class QuickUnion {
         return i;
     }
 
-    connected(a: number, b: number) {
+    connected(a: number, b: number): boolean {
         const rootA = this.root(a);
         const rootB = this.root(b);
         return rootA === rootB;
     }
 
-    union(a: number, b: number) {
+    union(a: number, b: number): void {
         const rootA = this.root(a);
         const rootB = this.root(b);
 
         // simple solution just assign new root
         // `this.ids[rootB] = rootA;`
         // but more clever solution check the size of trees and merge the small one to the big one
-        if(this.size[rootA] > this.size[rootB]){
+        if (this.size[rootA] > this.size[rootB]) {
             this.ids[rootB] = rootA;
             this.size[rootA] += this.size[rootB];
         }
-        else{
+        else {
             this.ids[rootA] = rootB;
             this.size[rootB] += this.size[rootA];
         }

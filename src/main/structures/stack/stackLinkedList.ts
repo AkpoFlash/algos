@@ -3,16 +3,16 @@ import { Maybe } from '../../utils/types';
 export class StackLinkedList<T> {
     first: Maybe<Item<T>> = null;
 
-    public isEmpty(){
+    public isEmpty(): boolean {
         return this.first === null;
     }
 
-    public push(item: T) {
+    public push(item: T): void {
         const oldItem = this.first;
         this.first = { item, next: oldItem };
     }
 
-    public pop() {
+    public pop(): T | undefined {
         const item = this.first?.item;
         this.first = this.first?.next;
         return item;

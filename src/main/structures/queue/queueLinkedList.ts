@@ -4,11 +4,11 @@ export class QueueLinkedList<T> {
     first: Maybe<Item<T>>;
     last: Maybe<Item<T>>;
 
-    public isEmpty() {
+    public isEmpty(): boolean {
         return !this.first;
     }
 
-    public enqueue(item: T) {
+    public enqueue(item: T): void {
         const oldItem = this.last ?? {} as Item<T>;
         this.last = { item, next: null };
         if (this.isEmpty()) {
@@ -19,7 +19,7 @@ export class QueueLinkedList<T> {
         }
     }
 
-    public dequeue() {
+    public dequeue(): T | undefined {
         const item = this.first?.item;
         this.first = this.first?.next;
         if (this.isEmpty()) {

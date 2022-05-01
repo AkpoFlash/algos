@@ -5,7 +5,7 @@
  * @param arr init unsorted array
  * @returns sorted array (in place)
  */
-export const shellSort = <T>(arr: T[]) => {
+export const shellSort = <T>(arr: T[]): T[] => {
     const len = arr.length;
 
     let h = 1;

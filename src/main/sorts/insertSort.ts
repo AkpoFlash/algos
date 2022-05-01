@@ -6,7 +6,7 @@
  * @param arr init unsorted array
  * @returns sorted array (in place)
  */
-export const insertSort = <T>(arr: T[]) => {
+export const insertSort = <T>(arr: T[]): T[] => {
     const len = arr.length;
     for (let i = 0; i < len; i++) {
         for (let j = i; j > 0; j--) {

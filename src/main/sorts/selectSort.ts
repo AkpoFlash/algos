@@ -5,7 +5,7 @@
  * @param arr init unsorted array
  * @returns sorted array (in place)
  */
-export const selectSort = <T>(arr: T[]) => {
+export const selectSort = <T>(arr: T[]): T[] => {
     const len = arr.length;
     for (let i = 0; i < len; i++) {
         let minIndex = i;

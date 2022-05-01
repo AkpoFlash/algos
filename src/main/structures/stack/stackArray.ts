@@ -2,15 +2,15 @@ export class StackArray<T> {
     stack: (T | undefined)[] = [];
     size = 0;
 
-    public isEmpty(){
+    public isEmpty(): boolean {
         return !this.size;
     }
 
-    public push(item: T) {
+    public push(item: T): void {
         this.stack[this.size++] = item;
     }
 
-    public pop() {
+    public pop(): T | undefined {
         const item = this.stack[--this.size];
         this.stack[this.size] = undefined;
         return item;

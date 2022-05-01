@@ -9,12 +9,12 @@ export class QuickFind {
         }
     }
 
-    connected(a: number, b: number) {
+    connected(a: number, b: number): boolean {
         // if IDs of components are matched then they are connected
         return this.ids[a] === this.ids[b];
     }
 
-    union(a: number, b: number) {
+    union(a: number, b: number): void {
         const ida = this.ids[a];
         const idb = this.ids[b];
 

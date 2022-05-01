@@ -7,10 +7,10 @@ import { shuffleInsert } from '../utils';
  * @param _arr init unsorted array
  * @returns sorted array (in place)
  */
-export const quickSort = <T>(_arr: T[]) => {
+export const quickSort = <T>(_arr: T[]): T[] => {
     const arr = shuffleInsert(_arr);
 
-    const partition = (arr: T[], lo: number, hi: number) => {
+    const partition = (arr: T[], lo: number, hi: number): number => {
         let i = lo;
         let j = hi + 1;
 
@@ -39,7 +39,7 @@ export const quickSort = <T>(_arr: T[]) => {
 
     }
 
-    const sort = (arr: T[], lo: number, hi: number) => {
+    const sort = (arr: T[], lo: number, hi: number): void => {
         if (hi <= lo) {
             return;
         }

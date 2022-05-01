@@ -6,11 +6,11 @@
  * @param arr init unsorted array
  * @returns sorted array (pseudo in place)
  */
-export const mergeSortBottomUp = <T>(arr: T[]) => {
+export const mergeSortBottomUp = <T>(arr: T[]): T[] => {
     const len = arr.length;
     const aux: T[] = [];
 
-    const merge = (arr: T[], aux: T[], lo: number, mid: number, hi: number) => {
+    const merge = (arr: T[], aux: T[], lo: number, mid: number, hi: number): void => {
         for (let i = lo; i <= hi; i++) {
             aux[i] = arr[i];
         }
