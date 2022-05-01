@@ -7,7 +7,7 @@
 - [Merge sort (Recurring)](./src/main/sorts/merge/mergeSortUpBottom.ts)
 - [Merge sort (Non-recurring)](./src/main/sorts/merge/mergeSortBottomUp.ts)
 - [Quick sort](./src/main/sorts/quickSort.ts)
-- [Heap sort](./src/main/sorts/heapSort.js)
+- [Heap sort](./src/main/sorts/heapSort.ts)
 
 ## Structures
 - [Union-find (Quick find)](./src/main/structures/union-find/quick-find.ts)
