@@ -1,4 +1,4 @@
-import { Maybe } from '../../utils/types';
+import { Maybe } from '../../utils';
 
 export class StackLinkedList<T> {
     first: Maybe<Item<T>> = null;
