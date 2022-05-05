@@ -1,7 +1,7 @@
 import { BST } from '../../main/structures';
-import { BST_TEST_DATA } from './resoures/bst.resources';
+import { BST_TEST_DATA } from './resoures/binarySearchTree.resources';
 
-describe('bst', () => {
+describe('binarySearchTree', () => {
     it('should be empty from scratch', () => {
         const bst = new BST<string, number>();
         expect(bst.isEmpty()).toBe(true);

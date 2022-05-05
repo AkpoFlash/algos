@@ -24,14 +24,14 @@ export interface IBST<K, V> {
  * This class implements binary search tree (BST)
  * 
  * BST guarants us:
- *  - search @method get (~N)
- *  - insert @method put (~N)
- *  - delete @method delete (~N)
+ *  - search - {@link get} (~N)
+ *  - insert - {@link put} (~N)
+ *  - delete - {@link delete} (~N)
  * 
  * But avarage cases are:
- *  - search @method get (~logN)
- *  - insert @method put (~logN)
- *  - delete @method delete (~sqrtN)
+ *  - search - {@link get} (~logN)
+ *  - insert - {@link put} (~logN)
+ *  - delete - {@link delete} (~sqrtN)
  */
 export class BST<K, V> implements IBST<K, V> {
     public root: Maybe<Node<K, V>>;

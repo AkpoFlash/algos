@@ -3,4 +3,4 @@ export * from './queue';
 export * from './stack';
 export * from './union-find';
 
-export * from './bst';
+export * from './binarySearchTree';
