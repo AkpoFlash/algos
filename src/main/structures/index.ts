@@ -4,3 +4,4 @@ export * from './stack';
 export * from './union-find';
 
 export * from './binarySearchTree';
+export * from './redBlackTree';
