@@ -21,6 +21,7 @@
 - [Priority Queue (Heap)](./src/main/structures/priority-queue/priorityQueueHeap.ts)
 - [Binary search tree (BST)](./src/main/structures/binarySearchTree.ts)
 - [Red-black tree](./src/main/structures/redBlackTree.ts)
+- [Graph](./src/main/structures/graph.ts)
 
 ## Utils
 - [Linear time Shiffling](./src/main/utils/shuffle.ts)
