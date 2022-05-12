@@ -1,4 +1,4 @@
-import { Maybe } from '../../../main/utils';
+import { Maybe } from '../../../main/types';
 
 type Node<K, V> = {
     key: K;

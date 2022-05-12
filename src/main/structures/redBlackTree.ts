@@ -1,4 +1,4 @@
-import { Maybe } from '../utils';
+import { Maybe } from '../types';
 import { BST } from './binarySearchTree';
 
 export interface IRedBlackTree<K, V> {

@@ -1,4 +1,4 @@
-import { Maybe } from '../../utils';
+import { Maybe } from '../../types';
 
 export class QueueLinkedList<T> {
     first: Maybe<Item<T>>;

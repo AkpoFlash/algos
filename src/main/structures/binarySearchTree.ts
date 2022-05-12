@@ -1,4 +1,4 @@
-import { Maybe } from '../utils';
+import { Maybe } from '../types';
 
 export interface IBST<K, V> {
     get: (key: K) => Maybe<Node<K, V>>;
