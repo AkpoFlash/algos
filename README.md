@@ -23,6 +23,8 @@
 - [Red-black tree](./src/main/structures/redBlackTree.ts)
 - [Graph](./src/main/structures/graph.ts)
 
+## Searches
+- [Quick select (Kth smallest find)](./src/main/searches/quickSelect.ts)
+
 ## Utils
 - [Linear time Shiffling](./src/main/utils/shuffle.ts)
-- [Quick select (Kth smallest find)](./src/main/utils/quickSelect.ts)

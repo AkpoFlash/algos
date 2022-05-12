@@ -1,4 +1,4 @@
-import { shuffleInsert } from './shuffle';
+import { shuffleInsert } from '../utils/shuffle';
 
 /**
  * This part of quick sort algorithm which find Kth smallest element, it takes linear (~N) time

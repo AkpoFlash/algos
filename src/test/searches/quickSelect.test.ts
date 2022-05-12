@@ -1,4 +1,4 @@
-import { quickSelect } from '../../main/utils';
+import { quickSelect } from '../../main/searches';
 import { QUICK_SELECT_TEST_DATA } from './resources/quickSelect.resources';
 
 describe('quickSelect', () => {
