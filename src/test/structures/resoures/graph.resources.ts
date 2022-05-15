@@ -1,3 +1,5 @@
+import { Graph } from "../../../main/structures";
+
 type TestDataType<T extends string | number | symbol> = {
     verticles: T[];
     edgesPairs: [T, T][];
@@ -16,3 +18,11 @@ export const GRAPH_TEST_DATA: TestDataType<string | number>[] = [
         adjacents: { 'A': ['B', 'C', 'G', 'F'], 'B': ['A'], 'C': ['A'], 'D': ['E'], 'E': ['G', 'D', 'F'], 'F': ['E', 'A'], 'G': ['A', 'E'], 'H': ['I'], 'I': ['H'], 'J': ['L', 'M', 'N'], 'L': ['J'], 'M': ['J', 'N'], 'N': ['J', 'M'] },
     }
 ]
+
+export const createTestGraph = (): Graph<string | number>[] => {
+    return GRAPH_TEST_DATA.map(item => {
+        const graph = new Graph(item.verticles);
+        item.edgesPairs.forEach(edge => graph.addEdge(...edge));
+        return graph;
+    })
+}
