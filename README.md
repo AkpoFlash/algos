@@ -26,6 +26,7 @@
 ## Searches
 - [Quick select (Kth smallest find)](./src/main/searches/quickSelect.ts)
 - [Depth-first search (DFS)](./src/main/searches/depthFirstSearch.ts)
+- [Breadth-first search (BFS)](./src/main/searches/breadthFirstSearch.ts)
 
 ## Utils
 - [Linear time Shiffling](./src/main/utils/shuffle.ts)
