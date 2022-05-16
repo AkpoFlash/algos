@@ -22,6 +22,7 @@
 - [Binary search tree (BST)](./src/main/structures/binarySearchTree.ts)
 - [Red-black tree](./src/main/structures/redBlackTree.ts)
 - [Graph](./src/main/structures/graph.ts)
+- [Connected component with DFS](./src/main/structures/connectedComponent.ts)
 
 ## Searches
 - [Quick select (Kth smallest find)](./src/main/searches/quickSelect.ts)

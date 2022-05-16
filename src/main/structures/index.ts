@@ -5,4 +5,5 @@ export * from './union-find';
 
 export * from './graph';
 export * from './binarySearchTree';
+export * from './connectedComponent';
 export * from './redBlackTree';
