@@ -1,8 +1,8 @@
 import { Graph } from "../../../main/structures";
 import { createTestGraph } from "../../structures/resoures/graph.resources";
 
-type TestDataType<T> = {
-    graph: Graph<string | number | symbol>,
+type TestDataType<T extends string | number | symbol> = {
+    graph: Graph<T>,
     startVerticle: T,
     pathTo: T[],
     hasPathTo: boolean[]
@@ -24,6 +24,6 @@ export const DFS_TEST_DATA: TestDataType<string | number | symbol>[] = [
         startVerticle: 'A',
         pathTo: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'L', 'M', 'N'],
         hasPathTo: [true, true, true, true, true, true, true, false, false, false, false, false, false],
-        getPathTo: [['A'], ['B', 'A'], ['C', 'A'], ['D', 'E', 'G','A'], ['E', 'G', 'A'], ['F', 'E', 'G', 'A'], ['G', 'A'], undefined, undefined, undefined, undefined, undefined, undefined]
+        getPathTo: [['A'], ['B', 'A'], ['C', 'A'], ['D', 'E', 'G', 'A'], ['E', 'G', 'A'], ['F', 'E', 'G', 'A'], ['G', 'A'], undefined, undefined, undefined, undefined, undefined, undefined]
     }
 ]

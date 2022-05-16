@@ -1,8 +1,8 @@
 import { Graph } from "../../../main/structures";
 import { createTestGraph } from "../../structures/resoures/graph.resources";
 
-type TestDataType<T> = {
-    graph: Graph<string | number | symbol>,
+type TestDataType<T extends string | number | symbol> = {
+    graph: Graph<T>,
     startVerticle: T,
     pathTo: T[],
     hasPathTo: boolean[]
