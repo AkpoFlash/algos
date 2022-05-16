@@ -6,7 +6,7 @@ type TestDataType<T extends string | number | symbol> = {
     adjacents: Record<T, T[]>;
 }
 
-export const GRAPH_TEST_DATA: TestDataType<string | number>[] = [
+export const GRAPH_TEST_DATA: TestDataType<string | number | symbol>[] = [
     {
         verticles: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
         edgesPairs: [[0, 1], [0, 2], [0, 6], [6, 4], [4, 3], [4, 5], [5, 0], [7, 8], [9, 10], [9, 11], [9, 12], [11, 12]],
@@ -19,7 +19,7 @@ export const GRAPH_TEST_DATA: TestDataType<string | number>[] = [
     }
 ]
 
-export const createTestGraph = (): Graph<string | number>[] => {
+export const createTestGraph = (): Graph<string | number | symbol>[] => {
     return GRAPH_TEST_DATA.map(item => {
         const graph = new Graph(item.verticles);
         item.edgesPairs.forEach(edge => graph.addEdge(...edge));

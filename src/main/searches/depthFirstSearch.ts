@@ -4,21 +4,44 @@ import { Graph } from "../structures";
  * This depth-first search (DFS) algorithm make possible to find all reachable verticles for ~(E + V) time
  * where E - is number of edges and V is number of verticles
  */
-export const depthFirstSearch = <T extends string | number | symbol>(graph: Graph<T>, startVerticle: T): void => {
-    const marked: Map<T, boolean> = new Map();
+export class DepthFirstSearch<T extends string | number | symbol> {
+    private _marked: Map<T, boolean> = new Map();
+    private _edgeTo: Map<T, T | undefined> = new Map();
 
-    const dfs = (graph: Graph<T>, verticle: T) => {
+    constructor(graph: Graph<T>, startVerticle: T) {
+        this._dfs(graph, startVerticle);
+    }
+
+    private _dfs = (graph: Graph<T>, verticle: T): void => {
         const adjacent = graph.adjacent(verticle);
-        marked.set(verticle, true);
+        this._marked.set(verticle, true);
+
         for (let i = 0; i < adjacent.length; i++) {
-            if (!marked.has(adjacent[i])) {
-                dfs(graph, adjacent[i]);
-                marked.set(adjacent[i], true);
+            if (!this._marked.has(adjacent[i])) {
+                this._dfs(graph, adjacent[i]);
+                this._marked.set(adjacent[i], true);
+                this._edgeTo.set(adjacent[i], verticle);
             }
         }
     }
 
-    dfs(graph, startVerticle);
+    public hasPathTo = (verticle: T): boolean => {
+        return !!this._marked.get(verticle);
+    }
+
+    public getPathTo = (verticle: T): T[] | undefined => {
+        if (!this.hasPathTo(verticle)) {
+            return;
+        }
+
+        const path: T[] = [];
+        for (let i: T | undefined = verticle; i !== undefined; i = this._edgeTo.get(i)) {
+            path.push(i);
+        }
+
+        return path;
+    }
+
 }
 
 // Example of usage:
@@ -38,4 +61,7 @@ graph.addEdge(9, 11);
 graph.addEdge(9, 12);
 graph.addEdge(11, 12);
 
-depthFirstSearch(graph, 0);
+const dfs = new DepthFirstSearch(graph, 0);
+dfs.getPathTo(5) // -> [ 5, 4, 6, 0 ]
+dfs.getPathTo(3) // -> [ 3, 4, 6, 0 ]
+dfs.getPathTo(0) // -> [ 0 ]
