@@ -4,6 +4,7 @@
         "moduleResolution": "Node",
         "strict": true,
         "target": "ES5",
+        "downlevelIteration": true,
         "rootDir": "./src/main",
         "outDir": "./build"
     },

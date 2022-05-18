@@ -22,6 +22,7 @@
 - [Binary search tree (BST)](./src/main/structures/binarySearchTree.ts)
 - [Red-black tree](./src/main/structures/redBlackTree.ts)
 - [Graph](./src/main/structures/graph.ts)
+- [Digraph](./src/main/structures/digraph.ts)
 - [Connected component with DFS](./src/main/structures/connectedComponent.ts)
 
 ## Searches
