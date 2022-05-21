@@ -22,7 +22,7 @@ export const DIGRAPH_TEST_DATA: TestDataType<string | number | symbol>[] = [
     }
 ]
 
-export const createTestGraph = (): Digraph<string | number | symbol>[] => {
+export const createTestDigraph = (): Digraph<string | number | symbol>[] => {
     return DIGRAPH_TEST_DATA.map(item => {
         const digraph = new Digraph(item.verticles);
         item.edgesPairs.forEach(edge => digraph.addEdge(...edge));

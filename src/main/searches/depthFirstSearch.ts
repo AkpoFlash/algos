@@ -1,4 +1,4 @@
-import { Graph } from "../structures";
+import { Digraph, Graph } from "../structures";
 
 /**
  * This depth-first search (DFS) algorithm make possible to find all reachable verticles for ~(E + V) time
@@ -8,11 +8,11 @@ export class DepthFirstSearch<T extends string | number | symbol> {
     private _marked: Map<T, boolean> = new Map();
     private _edgeTo: Map<T, T | undefined> = new Map();
 
-    constructor(graph: Graph<T>, startVerticle: T) {
+    constructor(graph: Graph<T> | Digraph<T>, startVerticle: T) {
         this._dfs(graph, startVerticle);
     }
 
-    private _dfs = (graph: Graph<T>, verticle: T): void => {
+    private _dfs = (graph: Graph<T> | Digraph<T>, verticle: T): void => {
         const adjacent = graph.adjacent(verticle) || [];
         this._marked.set(verticle, true);
 

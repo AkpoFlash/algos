@@ -1,4 +1,4 @@
-import { Graph, QueueLinkedList } from "../structures";
+import { Digraph, Graph, QueueLinkedList } from "../structures";
 
 /**
  * This breadth-first search (BFS) algorithm make possible to find all reachable verticles and shortest path
@@ -8,11 +8,11 @@ export class BreadthFirstSearch<T extends string | number | symbol> {
     private _marked: Map<T, boolean> = new Map();
     private _edgeTo: Map<T, T | undefined> = new Map();
 
-    constructor(graph: Graph<T>, startVerticle: T) {
+    constructor(graph: Graph<T> | Digraph<T>, startVerticle: T) {
         this._bfs(graph, startVerticle);
     }
 
-    private _bfs = (graph: Graph<T>, verticle: T): void => {
+    private _bfs = (graph: Graph<T> | Digraph<T>, verticle: T): void => {
         const queue = new QueueLinkedList<T>();
         queue.enqueue(verticle);
         this._marked.set(verticle, true);
