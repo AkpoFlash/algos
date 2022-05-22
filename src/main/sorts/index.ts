@@ -5,3 +5,4 @@ export * from './insertSort';
 export * from './quickSort';
 export * from './selectSort';
 export * from './shellSort';
+export * from './topologicalSort';
