@@ -19,7 +19,6 @@ export class DepthFirstSearch<T extends string | number | symbol> {
         for (let i = 0; i < adjacent.length; i++) {
             if (!this._marked.has(adjacent[i])) {
                 this._dfs(graph, adjacent[i]);
-                this._marked.set(adjacent[i], true);
                 this._edgeTo.set(adjacent[i], verticle);
             }
         }
