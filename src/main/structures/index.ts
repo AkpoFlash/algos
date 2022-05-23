@@ -8,3 +8,4 @@ export * from './graph';
 export * from './binarySearchTree';
 export * from './connectedComponent';
 export * from './redBlackTree';
+export * from './strongConnectedComponent';
