@@ -259,16 +259,16 @@ class Node<K, V> {
 
 // Example of usage:
 
-const bst = new BST<string, number>();
+// const bst = new BST<string, number>();
 
-bst.put('5', 5);
-bst.put('3', 3);
-bst.put('2', 2);
-bst.put('1', 1);
-bst.put('8', 8);
-bst.delete('5');
+// bst.put('5', 5);
+// bst.put('3', 3);
+// bst.put('2', 2);
+// bst.put('1', 1);
+// bst.put('8', 8);
+// bst.delete('5');
 
-console.log(bst.floor('5'));
-console.log(bst.ceil('4'));
-console.log(bst.get('5'));
-console.log(bst.keys());
+// bst.floor('5');
+// bst.ceil('4');
+// bst.get('5');
+// bst.keys();

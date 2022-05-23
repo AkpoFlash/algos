@@ -47,10 +47,10 @@ export class QuickUnion {
 
 // Example of usage:
 
-const qu = new QuickUnion(10)
-qu.union(1, 2)
-console.log(qu.connected(1, 2)) // -> true
-qu.union(2, 3)
-console.log(qu.connected(3, 4)) // -> false
-qu.union(3, 4)
-console.log(qu.connected(3, 4)) // -> true
+// const qu = new QuickUnion(10);
+// qu.union(1, 2);
+// qu.connected(1, 2); // -> true
+// qu.union(2, 3);
+// qu.connected(3, 4); // -> false
+// qu.union(3, 4);
+// qu.connected(3, 4); // -> true

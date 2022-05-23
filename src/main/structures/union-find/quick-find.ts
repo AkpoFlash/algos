@@ -33,10 +33,10 @@ export class QuickFind {
 
 // Example of usage:
 
-const qf = new QuickFind(10)
-qf.union(1, 2)
-console.log(qf.connected(1, 2)) // -> true
-qf.union(2, 3)
-console.log(qf.connected(3, 4)) // -> false
-qf.union(3, 4)
-console.log(qf.connected(3, 4)) // -> true
+// const qf = new QuickFind(10);
+// qf.union(1, 2);
+// qf.connected(1, 2); // -> true
+// qf.union(2, 3);
+// qf.connected(3, 4); // -> false
+// qf.union(3, 4)
+// qf.connected(3, 4); // -> true

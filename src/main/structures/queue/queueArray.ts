@@ -35,11 +35,11 @@ export class QueueArray<T> {
 
 // Example of usage:
 
-const queue = new QueueArray<number>();
-queue.enqueue(1);
-queue.enqueue(2);
-console.log(queue.dequeue()); // -> 1
-console.log(queue.dequeue()); // -> 2
-console.log(queue.dequeue()); // -> undefined
-queue.enqueue(3);
-console.log(queue.dequeue()); // -> 3
+// const queue = new QueueArray<number>();
+// queue.enqueue(1);
+// queue.enqueue(2);
+// queue.dequeue(); // -> 1
+// queue.dequeue(); // -> 2
+// queue.dequeue(); // -> undefined
+// queue.enqueue(3);
+// queue.dequeue(); // -> 3

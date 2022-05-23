@@ -51,31 +51,31 @@ export class Digraph<T extends string | number | symbol> implements IDigraph<T> 
 
 // Example of usage:
 
-const digraph = new Digraph<number>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+// const digraph = new Digraph<number>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
 
-digraph.addEdge(0, 1);
-digraph.addEdge(0, 2);
-digraph.addEdge(0, 6);
-digraph.addEdge(6, 4);
-digraph.addEdge(4, 3);
-digraph.addEdge(4, 5);
-digraph.addEdge(5, 0);
-digraph.addEdge(7, 8);
-digraph.addEdge(9, 10);
-digraph.addEdge(9, 11);
-digraph.addEdge(9, 12);
-digraph.addEdge(11, 12);
+// digraph.addEdge(0, 1);
+// digraph.addEdge(0, 2);
+// digraph.addEdge(0, 6);
+// digraph.addEdge(6, 4);
+// digraph.addEdge(4, 3);
+// digraph.addEdge(4, 5);
+// digraph.addEdge(5, 0);
+// digraph.addEdge(7, 8);
+// digraph.addEdge(9, 10);
+// digraph.addEdge(9, 11);
+// digraph.addEdge(9, 12);
+// digraph.addEdge(11, 12);
 
-digraph.adjacent(0) // -> [ 1, 2, 6 ]
-digraph.adjacent(1) // -> [ ]
-digraph.adjacent(2) // -> [ ]
-digraph.adjacent(3) // -> [ ]
-digraph.adjacent(4) // -> [ 3, 5 ]
-digraph.adjacent(5) // -> [ 0 ]
-digraph.adjacent(6) // -> [ 4 ]
-digraph.adjacent(7) // -> [ 8 ]
-digraph.adjacent(8) // -> [ ]
-digraph.adjacent(9) // -> [ 10, 11, 12 ]
-digraph.adjacent(10) // -> [ ]
-digraph.adjacent(11) // -> [ 12 ]
-digraph.adjacent(12) // -> [ ]
+// digraph.adjacent(0) // -> [ 1, 2, 6 ]
+// digraph.adjacent(1) // -> [ ]
+// digraph.adjacent(2) // -> [ ]
+// digraph.adjacent(3) // -> [ ]
+// digraph.adjacent(4) // -> [ 3, 5 ]
+// digraph.adjacent(5) // -> [ 0 ]
+// digraph.adjacent(6) // -> [ 4 ]
+// digraph.adjacent(7) // -> [ 8 ]
+// digraph.adjacent(8) // -> [ ]
+// digraph.adjacent(9) // -> [ 10, 11, 12 ]
+// digraph.adjacent(10) // -> [ ]
+// digraph.adjacent(11) // -> [ 12 ]
+// digraph.adjacent(12) // -> [ ]

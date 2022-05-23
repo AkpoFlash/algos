@@ -28,11 +28,11 @@ export class PriorityQueueOrdered<T> {
 
 // Example of usage:
 
-const pq = new PriorityQueueOrdered<number>();
-pq.insert(1);
-pq.insert(3);
-pq.insert(2);
-console.log(pq.deleteMax()); // -> second
-console.log(pq.deleteMax()); // -> first
-console.log(pq.deleteMax()); // -> third
-console.log(pq.deleteMax()); // -> undefined
+// const pq = new PriorityQueueOrdered<number>();
+// pq.insert(1);
+// pq.insert(3);
+// pq.insert(2);
+// pq.deleteMax(); // -> second
+// pq.deleteMax(); // -> first
+// pq.deleteMax(); // -> third
+// pq.deleteMax(); // -> undefined

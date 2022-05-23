@@ -27,7 +27,7 @@ export const shuffleInsert = <T>(arr: T[]): T[] => {
 
 // Example of usage:
 
-const arrNumber = [5, 4, 2, 1, 0, 6, 1, 2, 1, -1];
-const arrString = ['a', 'A', 'aa', 'ab', '123', 'Av', 'AW', 'aaa', 'bbb'];
-console.log(shuffleInsert(arrNumber));
-console.log(shuffleInsert(arrString));
+// const arrNumber = [5, 4, 2, 1, 0, 6, 1, 2, 1, -1];
+// const arrString = ['a', 'A', 'aa', 'ab', '123', 'Av', 'AW', 'aaa', 'bbb'];
+// shuffleInsert(arrNumber);
+// shuffleInsert(arrString);

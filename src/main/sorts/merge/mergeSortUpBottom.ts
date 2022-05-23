@@ -51,7 +51,7 @@ export const mergeSortUpBottom = <T>(arr: T[]): T[] => {
 
 // Example of usage:
 
-const arrNumber = [5, 4, 2, 1, 0, 6, 1, 2, 1, -1];
-const arrString = ['a', 'A', 'aa', 'ab', '123', 'Af', 'AW', 'aaa', 'bbb'];
-console.log(mergeSortUpBottom(arrNumber));
-console.log(mergeSortUpBottom(arrString));
+// const arrNumber = [5, 4, 2, 1, 0, 6, 1, 2, 1, -1];
+// const arrString = ['a', 'A', 'aa', 'ab', '123', 'Af', 'AW', 'aaa', 'bbb'];
+// mergeSortUpBottom(arrNumber); // -> [ -1, 0, 1, 1, 1, 2, 2, 4, 5, 6 ]
+// mergeSortUpBottom(arrString); // -> [ '123', 'A',  'AW', 'Av',  'a',  'aa', 'aaa', 'ab', 'bbb' ]

@@ -27,10 +27,9 @@ export const shellSort = <T>(arr: T[]): T[] => {
     return arr;
 }
 
-
 // Example of usage:
 
-const arrNumber = [5, 4, 2, 1, 0, 6, 1, 2, 1, -1];
-const arrString = ['a', 'A', 'aa', 'ab', '123', 'Av', 'AW', 'aaa', 'bbb'];
-console.log(shellSort(arrNumber));
-console.log(shellSort(arrString));
+// const arrNumber = [5, 4, 2, 1, 0, 6, 1, 2, 1, -1];
+// const arrString = ['a', 'A', 'aa', 'ab', '123', 'Av', 'AW', 'aaa', 'bbb'];
+// shellSort(arrNumber); // -> [ -1, 0, 1, 1, 1, 2, 2, 4, 5, 6 ]
+// shellSort(arrString); // -> [ '123', 'A',  'AW', 'Av',  'a',  'aa', 'aaa', 'ab', 'bbb' ]

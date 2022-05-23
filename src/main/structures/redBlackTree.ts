@@ -254,15 +254,15 @@ class Node<K, V> {
 
 // Example of usage:
 
-const rbt = new RedBlackTree<string, number>();
+// const rbt = new RedBlackTree<string, number>();
 
-rbt.put('5', 5);
-rbt.put('3', 3);
-rbt.put('2', 2);
-rbt.put('1', 1);
-rbt.put('8', 8);
+// rbt.put('5', 5);
+// rbt.put('3', 3);
+// rbt.put('2', 2);
+// rbt.put('1', 1);
+// rbt.put('8', 8);
 
-console.log(rbt.floor('9'));
-console.log(rbt.ceil('0'));
-console.log(rbt.get('2'));
-console.log(rbt.keys());
+// rbt.floor('9');
+// rbt.ceil('0');
+// rbt.get('2');
+// rbt.keys();

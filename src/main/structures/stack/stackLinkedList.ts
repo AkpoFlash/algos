@@ -26,11 +26,11 @@ type Item<T> = {
 
 // Example of usage:
 
-const stack = new StackLinkedList<string>();
-stack.push('first');
-stack.push('second');
-console.log(stack.pop()); // -> second
-console.log(stack.pop()); // -> first
-console.log(stack.pop()); // -> undefined
-stack.push('third');
-console.log(stack.pop()); // -> third
+// const stack = new StackLinkedList<string>();
+// stack.push('first');
+// stack.push('second');
+// stack.pop(); // -> second
+// stack.pop(); // -> first
+// stack.pop(); // -> undefined
+// stack.push('third');
+// stack.pop(); // -> third

@@ -40,20 +40,20 @@ export class DepthFirstOrder<T extends string | number | symbol> {
 
 // Example of usage:
 
-const digraph = new Digraph<number>([0, 1, 2, 3, 4, 5, 6]);
+// const digraph = new Digraph<number>([0, 1, 2, 3, 4, 5, 6]);
 
-digraph.addEdge(0, 1);
-digraph.addEdge(0, 2);
-digraph.addEdge(0, 5);
-digraph.addEdge(1, 4);
-digraph.addEdge(3, 2);
-digraph.addEdge(3, 4);
-digraph.addEdge(3, 5);
-digraph.addEdge(3, 6);
-digraph.addEdge(5, 2);
-digraph.addEdge(6, 0);
-digraph.addEdge(6, 4);
+// digraph.addEdge(0, 1);
+// digraph.addEdge(0, 2);
+// digraph.addEdge(0, 5);
+// digraph.addEdge(1, 4);
+// digraph.addEdge(3, 2);
+// digraph.addEdge(3, 4);
+// digraph.addEdge(3, 5);
+// digraph.addEdge(3, 6);
+// digraph.addEdge(5, 2);
+// digraph.addEdge(6, 0);
+// digraph.addEdge(6, 4);
 
-const dfo = new DepthFirstOrder(digraph);
-dfo.reverseOrder() // -> [ 4, 1, 2, 5, 0, 6, 3 ]
-dfo.topologicalOrder() // -> [ 3, 6, 0, 5, 2, 1, 4 ]
+// const dfo = new DepthFirstOrder(digraph);
+// dfo.reverseOrder() // -> [ 4, 1, 2, 5, 0, 6, 3 ]
+// dfo.topologicalOrder() // -> [ 3, 6, 0, 5, 2, 1, 4 ]

@@ -37,27 +37,27 @@ export class ConnectedComponent<T extends string | number | symbol> {
 
 // Example of usage:
 
-const graph = new Graph<number>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+// const graph = new Graph<number>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
 
-graph.addEdge(0, 1);
-graph.addEdge(0, 2);
-graph.addEdge(0, 6);
-graph.addEdge(6, 4);
-graph.addEdge(4, 3);
-graph.addEdge(4, 5);
-graph.addEdge(5, 0);
-graph.addEdge(5, 3);
-graph.addEdge(7, 8);
-graph.addEdge(9, 10);
-graph.addEdge(9, 11);
-graph.addEdge(9, 12);
-graph.addEdge(11, 12);
+// graph.addEdge(0, 1);
+// graph.addEdge(0, 2);
+// graph.addEdge(0, 6);
+// graph.addEdge(6, 4);
+// graph.addEdge(4, 3);
+// graph.addEdge(4, 5);
+// graph.addEdge(5, 0);
+// graph.addEdge(5, 3);
+// graph.addEdge(7, 8);
+// graph.addEdge(9, 10);
+// graph.addEdge(9, 11);
+// graph.addEdge(9, 12);
+// graph.addEdge(11, 12);
 
-const cc = new ConnectedComponent(graph);
+// const cc = new ConnectedComponent(graph);
 
-cc.componentCount(); // -> 3
-cc.getComponentId(0); // -> 0
-cc.getComponentId(5); // -> 0
-cc.getComponentId(7); // -> 1
-cc.getComponentId(9); // -> 2
-cc.getComponentId(11); // -> 2
+// cc.componentCount(); // -> 3
+// cc.getComponentId(0); // -> 0
+// cc.getComponentId(5); // -> 0
+// cc.getComponentId(7); // -> 1
+// cc.getComponentId(9); // -> 2
+// cc.getComponentId(11); // -> 2
