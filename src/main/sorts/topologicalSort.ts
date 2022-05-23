@@ -13,7 +13,7 @@ export class DepthFirstOrder<T extends string | number | symbol> {
         }
     }
 
-    private _dfs = (graph: Graph<T> | Digraph<T>, verticle: T) => {
+    private _dfs = (graph: Graph<T> | Digraph<T>, verticle: T): void => {
         const adjacent = graph.adjacent(verticle) || [];
         this._marked.set(verticle, true);
 
@@ -25,12 +25,12 @@ export class DepthFirstOrder<T extends string | number | symbol> {
         this._reverseOrder.push(verticle);
     }
 
-    public reverseOrder = () => {
+    public reverseOrder = (): T[] => {
         return this._reverseOrder;
     }
 
-    public topologicalOrder = () => {
-        const topologicalOrder = [];
+    public topologicalOrder = (): T[] => {
+        const topologicalOrder: T[] = [];
         for (let i = this._reverseOrder.length - 1; i >= 0; i--) {
             topologicalOrder.push(this._reverseOrder[i]);
         }

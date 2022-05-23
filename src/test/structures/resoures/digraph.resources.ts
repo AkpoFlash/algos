@@ -1,8 +1,11 @@
 import { Digraph } from "../../../main/structures";
 
-type TestDataType<T extends string | number | symbol> = {
+type DigraphTestDataType<T extends string | number | symbol> = {
     verticles: T[];
     edgesPairs: [T, T][];
+}
+
+type TestDataType<T extends string | number | symbol> = DigraphTestDataType<T> & {
     adjacents: Record<T, T[]>;
     adjacentsReversed: Record<T, T[]>;
 }
@@ -24,6 +27,25 @@ export const DIGRAPH_TEST_DATA: TestDataType<string | number | symbol>[] = [
 
 export const createTestDigraph = (): Digraph<string | number | symbol>[] => {
     return DIGRAPH_TEST_DATA.map(item => {
+        const digraph = new Digraph(item.verticles);
+        item.edgesPairs.forEach(edge => digraph.addEdge(...edge));
+        return digraph;
+    })
+}
+
+export const ACYCLIC_DIGRAPH_TEST_DATA: DigraphTestDataType<string | number | symbol>[] = [
+    {
+        verticles: [0, 1, 2, 3, 4, 5, 6],
+        edgesPairs: [[0, 1], [0, 2], [0, 5], [1, 4], [3, 2], [3, 4], [3, 5], [3, 6], [5, 2], [6, 0], [6, 4]],
+    },
+    {
+        verticles: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+        edgesPairs: [['A', 'B'], ['A', 'C'], ['A', 'F'], ['B', 'E'], ['D', 'C'], ['D', 'E'], ['D', 'F'], ['D', 'G'], ['F', 'C'], ['G', 'A'], ['G', 'E']],
+    },
+]
+
+export const createTestAsycleDigraph = (): Digraph<string | number | symbol>[] => {
+    return ACYCLIC_DIGRAPH_TEST_DATA.map(item => {
         const digraph = new Digraph(item.verticles);
         item.edgesPairs.forEach(edge => digraph.addEdge(...edge));
         return digraph;
