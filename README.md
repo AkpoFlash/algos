@@ -24,6 +24,7 @@
 - [Red-black tree](./src/main/structures/redBlackTree.ts)
 - [Graph](./src/main/structures/graph.ts)
 - [Digraph](./src/main/structures/digraph.ts)
+- [Edge weighted graph](./src/main/structures/edgeWeightedGraph.ts)
 - [Connected component with DFS](./src/main/structures/connectedComponent.ts)
 - [Strong connected component with DFS](./src/main/structures/strongConnectedComponent.ts)
 
