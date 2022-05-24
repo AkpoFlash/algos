@@ -16,7 +16,7 @@ describe('graph', () => {
         expect(graph.countOfVerticles).toBe(3);
     });
 
-    it.each(GRAPH_TEST_DATA)('should give adjancent properly', ({ verticles, edgesPairs, adjacents }) => {
+    it.each(GRAPH_TEST_DATA)('should give adjacent properly', ({ verticles, edgesPairs, adjacents }) => {
         const graph = new Graph(verticles);
         edgesPairs.forEach(edge => graph.addEdge(...edge));
         verticles.forEach(verticle => expect(graph.adjacent(verticle)).toEqual(adjacents[verticle]));
