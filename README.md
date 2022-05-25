@@ -32,6 +32,7 @@
 - [Quick select (Kth smallest find)](./src/main/searches/quickSelect.ts)
 - [Depth-first search (DFS)](./src/main/searches/depthFirstSearch.ts)
 - [Breadth-first search (BFS)](./src/main/searches/breadthFirstSearch.ts)
+- [Kruskal's algorithm (Finding minimal spanning tree (MST))](./src/main/searches/kruskalsSearch.ts)
 
 ## Utils
 - [Linear time Shiffling](./src/main/utils/shuffle.ts)

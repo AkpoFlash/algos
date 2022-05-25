@@ -29,7 +29,7 @@ export class EdgeWeightedGraph<T extends string | number | symbol> {
 }
 
 
-export class Edge<T extends string | number | symbol> {
+export class Edge<T> {
     private readonly v: T;
     private readonly w: T;
     private readonly weight: number;
