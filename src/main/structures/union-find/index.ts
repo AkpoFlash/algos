@@ -1,2 +1,2 @@
-export * from './quick-find';
-export * from './quick-union';
+export * from './quickFind';
+export * from './quickUnion';
