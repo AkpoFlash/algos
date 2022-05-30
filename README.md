@@ -25,6 +25,7 @@
 - [Graph](./src/main/structures/graph.ts)
 - [Digraph](./src/main/structures/digraph.ts)
 - [Edge weighted graph](./src/main/structures/edgeWeightedGraph.ts)
+- [Edge weighted digraph](./src/main/structures/edgeWeightedDigraph.ts)
 - [Connected component with DFS](./src/main/structures/connectedComponent.ts)
 - [Strong connected component with DFS](./src/main/structures/strongConnectedComponent.ts)
 
