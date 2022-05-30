@@ -1,4 +1,5 @@
 export * from './breadthFirstSearch';
 export * from './depthFirstSearch';
-export * from './quickSelect';
 export * from './kruskalsSearch';
+export * from './primsSearch';
+export * from './quickSelect';
