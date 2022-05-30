@@ -1,5 +1,5 @@
 /**
- * This primitive implementation of edge weighted graph structure for working with graph alogorithms
+ * This primitive implementation of edge weighted graph structure for working with graph algorithms
  * 
  * This is naive implementation just for mock purposes
  * @constructor receive only distinct values 

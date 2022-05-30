@@ -7,7 +7,7 @@ export interface IGraph<T> {
 }
 
 /**
- * This primitive implementation of graph structure for working with graph alogorithms
+ * This primitive implementation of graph structure for working with graph algorithms
  * 
  * This is naive implementation just for mock purposes
  * @constructor receive only distinct values 
