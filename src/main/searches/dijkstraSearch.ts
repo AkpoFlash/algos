@@ -1,7 +1,7 @@
 import { DirectedEdge, EdgeWeightedDigraph } from "../structures";
 
 /**
- * Dijkstra's algorithm finds the minimal spanning tree (MST) in directed edge-weigthed graph
+ * Dijkstra's algorithm finds the shortest path to all vertices in directed edge-weigthed graph
  * 
  * How it's work:
  * - Set all distances to infinity except start vertice which set to zero
@@ -107,4 +107,4 @@ export class DijkstraSearch<T extends string | number | symbol> {
 
 // const shortPath = new DijkstraSearch(graph, 0);
 // console.log(shortPath.getPaths()); // -> { '1': [0, 1], '2': [5, 2], '3': [2, 3], '4': [0, 4], '5': [4, 5], '6': [2, 6], '7': [0, 7] }
-// console.log(shortPath.distanceTo); // -> Map(8) { 0 => 0, 1 => 5, 2 => 14, 3 => 17, 4 => 9, 5 => 13, 6 => 25, 7 => 8 }
+// console.log(shortPath.getDistance()); // -> Map(8) { 0 => 0, 1 => 5, 2 => 14, 3 => 17, 4 => 9, 5 => 13, 6 => 25, 7 => 8 }
