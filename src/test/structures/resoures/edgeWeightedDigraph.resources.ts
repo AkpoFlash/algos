@@ -1,14 +1,14 @@
 import { DirectedEdge, EdgeWeightedDigraph } from "../../../main/structures";
 
 type TestDataType<T extends string | number | symbol> = {
-    verticles: T[];
+    vertices: T[];
     edgesPairs: DirectedEdge<T>[];
     adjacentsNumber: number[];
 }
 
 export const EDGE_WEIGHTED_DIGRAPH_TEST_DATA: TestDataType<string | number | symbol>[] = [
     {
-        verticles: [0, 1, 2, 3, 4, 5, 6, 7],
+        vertices: [0, 1, 2, 3, 4, 5, 6, 7],
         edgesPairs: [
             new DirectedEdge<string | number | symbol>(4, 5, 0.35),
             new DirectedEdge<string | number | symbol>(4, 7, 0.37),
@@ -30,7 +30,7 @@ export const EDGE_WEIGHTED_DIGRAPH_TEST_DATA: TestDataType<string | number | sym
         adjacentsNumber: [3, 4, 2, 1, 2, 1, 3, 0],
     },
     {
-        verticles: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+        vertices: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
         edgesPairs: [
             new DirectedEdge<string | number | symbol>('E', 'F', 0.35),
             new DirectedEdge<string | number | symbol>('E', 'H', 0.37),
@@ -55,7 +55,7 @@ export const EDGE_WEIGHTED_DIGRAPH_TEST_DATA: TestDataType<string | number | sym
 
 export const createTestEdgeWeightedDigraph = (): EdgeWeightedDigraph<string | number | symbol>[] => {
     return EDGE_WEIGHTED_DIGRAPH_TEST_DATA.map(item => {
-        const graph = new EdgeWeightedDigraph(item.verticles);
+        const graph = new EdgeWeightedDigraph(item.vertices);
         item.edgesPairs.forEach(edge => graph.addEdge(edge));
         return graph;
     })

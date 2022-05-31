@@ -4,9 +4,9 @@ import { Edge, EdgeWeightedGraph } from "../structures";
  * Prim's algorithm finds the minimal spanning tree (MST) in undirected edge-weigthed graph
  * 
  * How it's work:
- * - Take any verticle
+ * - Take any vertice
  * - Take the minimal adjecent edge
- * - Check if verticles from minimum edge had been visited already, skip if vissited, visit if aren't
+ * - Check if vertices from minimum edge had been visited already, skip if vissited, visit if aren't
  *   (For cheking connection we could use difference methods (e.g. DFS [O(~V)], BFS [O(~V)], union-find [O(~logV)]))
  * - Repeat until reach V - 1 edges into MST
  */
@@ -19,11 +19,11 @@ export class PrimSearch<T extends string | number | symbol> {
     public totalDistance: number = 0;
 
     constructor(graph: EdgeWeightedGraph<T>) {
-        const adjacentEdges = graph.adjacentEdges(graph.verticles[0]);
+        const adjacentEdges = graph.adjacentEdges(graph.vertices[0]);
 
-        this._visitVerticle(graph, graph.verticles[0]);
+        this._visitVertice(graph, graph.vertices[0]);
 
-        while (adjacentEdges?.length && this.mst.length < graph.verticles.length - 1) {
+        while (adjacentEdges?.length && this.mst.length < graph.vertices.length - 1) {
             const edge = this._removeMinimunEdge();
 
             if (edge) {
@@ -34,10 +34,10 @@ export class PrimSearch<T extends string | number | symbol> {
                     this.mst.push(edge);
                     this.totalDistance += edge.getWeight();
                     if (!this._visited.get(v)) {
-                        this._visitVerticle(graph, v);
+                        this._visitVertice(graph, v);
                     }
                     if (!this._visited.get(w)) {
-                        this._visitVerticle(graph, w);
+                        this._visitVertice(graph, w);
                     }
                 }
             }
@@ -60,11 +60,11 @@ export class PrimSearch<T extends string | number | symbol> {
         return this._unsortedAdjacentEdges.pop();
     }
 
-    private _visitVerticle = (graph: EdgeWeightedGraph<T>, verticle: T): void => {
-        this._visited.set(verticle, true);
+    private _visitVertice = (graph: EdgeWeightedGraph<T>, vertice: T): void => {
+        this._visited.set(vertice, true);
 
-        graph.adjacentEdges(verticle)?.forEach(edge => {
-            if (!this._visited.get(edge.other(verticle))) {
+        graph.adjacentEdges(vertice)?.forEach(edge => {
+            if (!this._visited.get(edge.other(vertice))) {
                 this._unsortedAdjacentEdges.push(edge);
             }
         })

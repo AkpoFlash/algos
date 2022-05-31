@@ -5,7 +5,7 @@ describe('digraph', () => {
     it('should be empty from scratch', () => {
         const digraph = new Digraph([]);
         expect(digraph.countOfEdges).toBe(0);
-        expect(digraph.countOfVerticles).toBe(0);
+        expect(digraph.countOfVertices).toBe(0);
     });
 
     it('should not be empty after add something', () => {
@@ -13,19 +13,19 @@ describe('digraph', () => {
         digraph.addEdge(1, 2);
         digraph.addEdge(2, 3);
         expect(digraph.countOfEdges).toBe(2);
-        expect(digraph.countOfVerticles).toBe(3);
+        expect(digraph.countOfVertices).toBe(3);
     });
 
-    it.each(DIGRAPH_TEST_DATA)('should give adjacent properly', ({ verticles, edgesPairs, adjacents }) => {
-        const digraph = new Digraph(verticles);
+    it.each(DIGRAPH_TEST_DATA)('should give adjacent properly', ({ vertices, edgesPairs, adjacents }) => {
+        const digraph = new Digraph(vertices);
         edgesPairs.forEach(edge => digraph.addEdge(...edge));
-        verticles.forEach(verticle => expect(digraph.adjacent(verticle)).toEqual(adjacents[verticle]));
+        vertices.forEach(vertice => expect(digraph.adjacent(vertice)).toEqual(adjacents[vertice]));
     });
 
-    it.each(DIGRAPH_TEST_DATA)('should give reversed adjacent properly', ({ verticles, edgesPairs, adjacentsReversed }) => {
-        let digraph = new Digraph(verticles);
+    it.each(DIGRAPH_TEST_DATA)('should give reversed adjacent properly', ({ vertices, edgesPairs, adjacentsReversed }) => {
+        let digraph = new Digraph(vertices);
         edgesPairs.forEach(edge => digraph.addEdge(...edge));
         digraph = digraph.reverse();
-        verticles.forEach(verticle => expect(digraph.adjacent(verticle)).toEqual(adjacentsReversed[verticle]));
+        vertices.forEach(vertice => expect(digraph.adjacent(vertice)).toEqual(adjacentsReversed[vertice]));
     });
 })

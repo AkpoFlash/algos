@@ -7,10 +7,10 @@
 export class EdgeWeightedDigraph<T extends string | number | symbol> {
     private adjacentList: Map<T, DirectedEdge<T>[]> = new Map();
     public edges: DirectedEdge<T>[] = [];
-    public verticles: T[];
+    public vertices: T[];
 
-    constructor(verticles: T[]) {
-        this.verticles = verticles;
+    constructor(vertices: T[]) {
+        this.vertices = vertices;
     }
 
     public addEdge = (edge: DirectedEdge<T>): void => {
@@ -20,8 +20,8 @@ export class EdgeWeightedDigraph<T extends string | number | symbol> {
         this.edges.push(edge);
     }
 
-    public adjacentEdges = (verticle: T): DirectedEdge<T>[] | undefined => {
-        return this.adjacentList.get(verticle);
+    public adjacentEdges = (vertice: T): DirectedEdge<T>[] | undefined => {
+        return this.adjacentList.get(vertice);
     }
 }
 

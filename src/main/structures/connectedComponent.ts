@@ -6,19 +6,19 @@ export class ConnectedComponent<T extends string | number | symbol> {
     private _componentCount = 0;
 
     constructor(graph: Graph<T>) {
-        graph.verticles.forEach(verticle => {
-            if (!this._marked.has(verticle)) {
-                this._dfs(graph, verticle);
+        graph.vertices.forEach(vertice => {
+            if (!this._marked.has(vertice)) {
+                this._dfs(graph, vertice);
                 this._componentCount++;
             }
         })
     }
 
-    private _dfs = (graph: Graph<T>, verticle: T): void => {
-        this._marked.set(verticle, true);
-        this._id.set(verticle, this._componentCount);
+    private _dfs = (graph: Graph<T>, vertice: T): void => {
+        this._marked.set(vertice, true);
+        this._id.set(vertice, this._componentCount);
 
-        graph.adjacent(verticle)?.forEach(v => {
+        graph.adjacent(vertice)?.forEach(v => {
             if (!this._marked.get(v)) {
                 this._dfs(graph, v)
             }
@@ -29,8 +29,8 @@ export class ConnectedComponent<T extends string | number | symbol> {
         return this._componentCount;
     }
 
-    public getComponentId = (verticle: T): number | undefined => {
-        return this._id.get(verticle);
+    public getComponentId = (vertice: T): number | undefined => {
+        return this._id.get(vertice);
     }
 
 }

@@ -1,40 +1,40 @@
 import { Digraph, Graph } from "../structures";
 
 /**
- * This depth-first search (DFS) algorithm make possible to find all reachable verticles for ~(E + V) time
- * where E - is number of edges and V is number of verticles
+ * This depth-first search (DFS) algorithm make possible to find all reachable vertices for ~(E + V) time
+ * where E - is number of edges and V is number of vertices
  */
 export class DepthFirstSearch<T extends string | number | symbol> {
     private _marked: Map<T, boolean> = new Map();
     private _edgeTo: Map<T, T | undefined> = new Map();
 
-    constructor(graph: Graph<T> | Digraph<T>, startVerticle: T) {
-        this._dfs(graph, startVerticle);
+    constructor(graph: Graph<T> | Digraph<T>, startVertice: T) {
+        this._dfs(graph, startVertice);
     }
 
-    private _dfs = (graph: Graph<T> | Digraph<T>, verticle: T): void => {
-        const adjacent = graph.adjacent(verticle) || [];
-        this._marked.set(verticle, true);
+    private _dfs = (graph: Graph<T> | Digraph<T>, vertice: T): void => {
+        const adjacent = graph.adjacent(vertice) || [];
+        this._marked.set(vertice, true);
 
         for (let i = 0; i < adjacent.length; i++) {
             if (!this._marked.has(adjacent[i])) {
                 this._dfs(graph, adjacent[i]);
-                this._edgeTo.set(adjacent[i], verticle);
+                this._edgeTo.set(adjacent[i], vertice);
             }
         }
     }
 
-    public hasPathTo = (verticle: T): boolean => {
-        return !!this._marked.get(verticle);
+    public hasPathTo = (vertice: T): boolean => {
+        return !!this._marked.get(vertice);
     }
 
-    public getPathTo = (verticle: T): T[] | undefined => {
-        if (!this.hasPathTo(verticle)) {
+    public getPathTo = (vertice: T): T[] | undefined => {
+        if (!this.hasPathTo(vertice)) {
             return;
         }
 
         const path: T[] = [];
-        for (let i: T | undefined = verticle; i !== undefined; i = this._edgeTo.get(i)) {
+        for (let i: T | undefined = vertice; i !== undefined; i = this._edgeTo.get(i)) {
             path.push(i);
         }
 

@@ -6,7 +6,7 @@ import { Edge, EdgeWeightedGraph, QuickFind } from "../structures";
  * How it's work:
  * - Store all edges by weigth in ascending order (Use minimal queue or sorting)
  * - Take the minimal edge
- * - Check if verticles from minimum edge have connected by MST, skip if connected, connect if aren't
+ * - Check if vertices from minimum edge have connected by MST, skip if connected, connect if aren't
  *   (For cheking connection we could use difference methods (e.g. DFS [O(~V)], BFS [O(~V)], union-find [O(~logV)]))
  * - Repeat until reach V - 1 edges into MST
  */
@@ -19,8 +19,8 @@ export class KruskalSearch<T extends string | number | symbol> {
         // sort in descending order for use .pop() method instead of .shift()
         this.sortedEdges = [...graph.edges].sort((a, b) => b.getWeight() - a.getWeight());
 
-        const qf = new QuickFind(graph.verticles);
-        while (this.sortedEdges.length && this.mst.length < graph.verticles.length - 1) {
+        const qf = new QuickFind(graph.vertices);
+        while (this.sortedEdges.length && this.mst.length < graph.vertices.length - 1) {
             const edge = this.sortedEdges.pop()!;
             const v = edge.either();
             const w = edge.other(v);

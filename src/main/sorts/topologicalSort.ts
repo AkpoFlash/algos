@@ -5,24 +5,24 @@ export class DepthFirstOrder<T extends string | number | symbol> {
     private _reverseOrder: T[] = [];
 
     constructor(graph: Graph<T> | Digraph<T>) {
-        const verticles = graph.verticles;
-        for (let i = 0; i < verticles.length; i++) {
-            if (!this._marked.has(verticles[i])) {
-                this._dfs(graph, verticles[i]);
+        const vertices = graph.vertices;
+        for (let i = 0; i < vertices.length; i++) {
+            if (!this._marked.has(vertices[i])) {
+                this._dfs(graph, vertices[i]);
             }
         }
     }
 
-    private _dfs = (graph: Graph<T> | Digraph<T>, verticle: T): void => {
-        const adjacent = graph.adjacent(verticle) || [];
-        this._marked.set(verticle, true);
+    private _dfs = (graph: Graph<T> | Digraph<T>, vertice: T): void => {
+        const adjacent = graph.adjacent(vertice) || [];
+        this._marked.set(vertice, true);
 
         for (let i = 0; i < adjacent.length; i++) {
             if (!this._marked.has(adjacent[i])) {
                 this._dfs(graph, adjacent[i]);
             }
         }
-        this._reverseOrder.push(verticle);
+        this._reverseOrder.push(vertice);
     }
 
     public reverseOrder = (): T[] => {

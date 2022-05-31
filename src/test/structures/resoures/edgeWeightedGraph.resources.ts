@@ -1,14 +1,14 @@
 import { Edge, EdgeWeightedGraph } from "../../../main/structures";
 
 type TestDataType<T extends string | number | symbol> = {
-    verticles: T[];
+    vertices: T[];
     edgesPairs: Edge<T>[];
     adjacentsNumber: number[];
 }
 
 export const EDGE_WEIGHTED_GRAPH_TEST_DATA: TestDataType<string | number | symbol>[] = [
     {
-        verticles: [0, 1, 2, 3, 4, 5, 6, 7],
+        vertices: [0, 1, 2, 3, 4, 5, 6, 7],
         edgesPairs: [
             new Edge<string | number | symbol>(4, 5, 0.35),
             new Edge<string | number | symbol>(4, 7, 0.37),
@@ -30,7 +30,7 @@ export const EDGE_WEIGHTED_GRAPH_TEST_DATA: TestDataType<string | number | symbo
         adjacentsNumber: [4, 4, 5, 3, 4, 3, 4, 5],
     },
     {
-        verticles: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+        vertices: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
         edgesPairs: [
             new Edge<string | number | symbol>('E', 'F', 0.35),
             new Edge<string | number | symbol>('E', 'H', 0.37),
@@ -55,7 +55,7 @@ export const EDGE_WEIGHTED_GRAPH_TEST_DATA: TestDataType<string | number | symbo
 
 export const createTestEdgeWeightedGraph = (): EdgeWeightedGraph<string | number | symbol>[] => {
     return EDGE_WEIGHTED_GRAPH_TEST_DATA.map(item => {
-        const graph = new EdgeWeightedGraph(item.verticles);
+        const graph = new EdgeWeightedGraph(item.vertices);
         item.edgesPairs.forEach(edge => graph.addEdge(edge));
         return graph;
     })

@@ -1,21 +1,21 @@
 import { Digraph, Graph, QueueLinkedList } from "../structures";
 
 /**
- * This breadth-first search (BFS) algorithm make possible to find all reachable verticles and shortest path
- * for ~(E + V) time where E - is number of edges and V is number of verticles
+ * This breadth-first search (BFS) algorithm make possible to find all reachable vertices and shortest path
+ * for ~(E + V) time where E - is number of edges and V is number of vertices
  */
 export class BreadthFirstSearch<T extends string | number | symbol> {
     private _marked: Map<T, boolean> = new Map();
     private _edgeTo: Map<T, T | undefined> = new Map();
 
-    constructor(graph: Graph<T> | Digraph<T>, startVerticle: T) {
-        this._bfs(graph, startVerticle);
+    constructor(graph: Graph<T> | Digraph<T>, startVertice: T) {
+        this._bfs(graph, startVertice);
     }
 
-    private _bfs = (graph: Graph<T> | Digraph<T>, verticle: T): void => {
+    private _bfs = (graph: Graph<T> | Digraph<T>, vertice: T): void => {
         const queue = new QueueLinkedList<T>();
-        queue.enqueue(verticle);
-        this._marked.set(verticle, true);
+        queue.enqueue(vertice);
+        this._marked.set(vertice, true);
 
         while (!queue.isEmpty()) {
             const v = queue.dequeue()!;
@@ -31,17 +31,17 @@ export class BreadthFirstSearch<T extends string | number | symbol> {
         }
     }
 
-    public hasPathTo = (verticle: T): boolean => {
-        return !!this._marked.get(verticle);
+    public hasPathTo = (vertice: T): boolean => {
+        return !!this._marked.get(vertice);
     }
 
-    public getPathTo = (verticle: T): T[] | undefined => {
-        if (!this.hasPathTo(verticle)) {
+    public getPathTo = (vertice: T): T[] | undefined => {
+        if (!this.hasPathTo(vertice)) {
             return;
         }
 
         const path: T[] = [];
-        for (let i: T | undefined = verticle; i !== undefined; i = this._edgeTo.get(i)) {
+        for (let i: T | undefined = vertice; i !== undefined; i = this._edgeTo.get(i)) {
             path.push(i);
         }
 

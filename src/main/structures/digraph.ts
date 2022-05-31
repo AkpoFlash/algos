@@ -1,8 +1,8 @@
 export interface IDigraph<T extends string | number | symbol> {
     addEdge: (verticle1: T, verticle2: T) => void;
-    adjacent: (verticle: T) => T[] | undefined;
-    verticles: T[];
-    countOfVerticles: number;
+    adjacent: (vertice: T) => T[] | undefined;
+    vertices: T[];
+    countOfVertices: number;
     countOfEdges: number;
     reverse: () => Digraph<T>;
 }
@@ -12,24 +12,24 @@ export interface IDigraph<T extends string | number | symbol> {
  * 
  * This is naive implementation just for mock purposes
  * @constructor receive only distinct values 
- * @field countOfVerticles count duplicated verticles and all empty init array values
+ * @field countOfVertices count duplicated vertices and all empty init array values
  * @method addEdge pass duplicate edges
  * @field countOfEdges count duplicated edges
  */
 export class Digraph<T extends string | number | symbol> implements IDigraph<T> {
     private adjacentList: Map<T, T[]> = new Map();
-    public countOfVerticles = 0;
-    public verticles: T[] = [];
+    public countOfVertices = 0;
+    public vertices: T[] = [];
     public countOfEdges = 0;
 
-    constructor(verticles: T[]) {
-        this.verticles = verticles;
-        verticles.forEach(item => this.adjacentList.set(item, []));
-        this.countOfVerticles = verticles.length;
+    constructor(vertices: T[]) {
+        this.vertices = vertices;
+        vertices.forEach(item => this.adjacentList.set(item, []));
+        this.countOfVertices = vertices.length;
     }
 
-    adjacent = (verticle: T): T[] | undefined => {
-        return this.adjacentList.get(verticle);
+    adjacent = (vertice: T): T[] | undefined => {
+        return this.adjacentList.get(vertice);
     }
 
     addEdge = (verticle1: T, verticle2: T): void => {
@@ -39,10 +39,10 @@ export class Digraph<T extends string | number | symbol> implements IDigraph<T> 
     }
 
     reverse = (): Digraph<T> => {
-        const digraphReversed = new Digraph(this.verticles);
+        const digraphReversed = new Digraph(this.vertices);
 
-        for (let verticle of this.adjacentList) {
-            verticle[1].forEach(adjacent => digraphReversed.addEdge(adjacent, verticle[0]));
+        for (let vertice of this.adjacentList) {
+            vertice[1].forEach(adjacent => digraphReversed.addEdge(adjacent, vertice[0]));
         }
 
         return digraphReversed;

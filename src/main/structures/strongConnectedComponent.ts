@@ -8,19 +8,19 @@ export class StrongConnectedComponent<T extends string | number | symbol> {
 
     constructor(digraph: Digraph<T>) {
         const reversedDigraph = new DepthFirstOrder<T>(digraph.reverse());
-        reversedDigraph.topologicalOrder().forEach(verticle => {
-            if (!this._marked.has(verticle)) {
-                this._dfs(digraph, verticle);
+        reversedDigraph.topologicalOrder().forEach(vertice => {
+            if (!this._marked.has(vertice)) {
+                this._dfs(digraph, vertice);
                 this._componentCount++;
             }
         })
     }
 
-    private _dfs = (digraph: Digraph<T>, verticle: T): void => {
-        this._marked.set(verticle, true);
-        this._id.set(verticle, this._componentCount);
+    private _dfs = (digraph: Digraph<T>, vertice: T): void => {
+        this._marked.set(vertice, true);
+        this._id.set(vertice, this._componentCount);
 
-        digraph.adjacent(verticle)?.forEach(v => {
+        digraph.adjacent(vertice)?.forEach(v => {
             if (!this._marked.get(v)) {
                 this._dfs(digraph, v)
             }
@@ -31,8 +31,8 @@ export class StrongConnectedComponent<T extends string | number | symbol> {
         return this._componentCount;
     }
 
-    public getComponentId = (verticle: T): number | undefined => {
-        return this._id.get(verticle);
+    public getComponentId = (vertice: T): number | undefined => {
+        return this._id.get(vertice);
     }
 
 }

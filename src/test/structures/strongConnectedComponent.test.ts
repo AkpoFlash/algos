@@ -7,8 +7,8 @@ describe('strongConnectedComponent', () => {
         expect(scc.componentCount()).toBe(componentCount);
     });
 
-    it.each(STRONG_CONNECTED_COMPONENT_TEST_DATA)('should give correct verticle component id', ({ graph, verticles, componentId }) => {
+    it.each(STRONG_CONNECTED_COMPONENT_TEST_DATA)('should give correct vertice component id', ({ graph, vertices, componentId }) => {
         const scc = new StrongConnectedComponent(graph);
-        verticles.forEach((verticle, index) => expect(scc.getComponentId(verticle)).toBe(componentId[index]));
+        vertices.forEach((vertice, index) => expect(scc.getComponentId(vertice)).toBe(componentId[index]));
     });
 })

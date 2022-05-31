@@ -7,10 +7,10 @@
 export class EdgeWeightedGraph<T extends string | number | symbol> {
     private adjacentList: Map<T, Edge<T>[]> = new Map();
     public edges: Edge<T>[] = [];
-    public verticles: T[];
+    public vertices: T[];
 
-    constructor(verticles: T[]) {
-        this.verticles = verticles;
+    constructor(vertices: T[]) {
+        this.vertices = vertices;
     }
 
     public addEdge = (edge: Edge<T>): void => {
@@ -23,8 +23,8 @@ export class EdgeWeightedGraph<T extends string | number | symbol> {
         this.edges.push(edge);
     }
 
-    public adjacentEdges = (verticle: T): Edge<T>[] | undefined => {
-        return this.adjacentList.get(verticle);
+    public adjacentEdges = (vertice: T): Edge<T>[] | undefined => {
+        return this.adjacentList.get(vertice);
     }
 }
 

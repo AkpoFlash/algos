@@ -1,8 +1,8 @@
 export interface IGraph<T> {
     addEdge: (verticle1: T, verticle2: T) => void;
-    adjacent: (verticle: T) => T[] | undefined;
-    verticles: T[];
-    countOfVerticles: number;
+    adjacent: (vertice: T) => T[] | undefined;
+    vertices: T[];
+    countOfVertices: number;
     countOfEdges: number;
 }
 
@@ -11,24 +11,24 @@ export interface IGraph<T> {
  * 
  * This is naive implementation just for mock purposes
  * @constructor receive only distinct values 
- * @field countOfVerticles count duplicated verticles and all empty init array values
+ * @field countOfVertices count duplicated vertices and all empty init array values
  * @method addEdge pass duplicate edges
  * @field countOfEdges count duplicated edges
  */
 export class Graph<T extends string | number | symbol> implements IGraph<T> {
     private adjacentList: Map<T, T[]> = new Map();
-    public countOfVerticles = 0;
-    public verticles: T[] = [];
+    public countOfVertices = 0;
+    public vertices: T[] = [];
     public countOfEdges = 0;
 
-    constructor(verticles: T[]) {
-        this.verticles = verticles;
-        verticles.forEach(item => this.adjacentList.set(item, []));
-        this.countOfVerticles = verticles.length;
+    constructor(vertices: T[]) {
+        this.vertices = vertices;
+        vertices.forEach(item => this.adjacentList.set(item, []));
+        this.countOfVertices = vertices.length;
     }
 
-    adjacent = (verticle: T): T[] | undefined => {
-        return this.adjacentList.get(verticle);
+    adjacent = (vertice: T): T[] | undefined => {
+        return this.adjacentList.get(vertice);
     }
 
     addEdge = (verticle1: T, verticle2: T): void => {
