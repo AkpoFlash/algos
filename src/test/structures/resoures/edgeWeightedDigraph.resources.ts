@@ -33,7 +33,7 @@ export const EDGE_WEIGHTED_DIGRAPH_TEST_DATA: TestDataType<string | number | sym
         vertices: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
         edgesPairs: [
             new DirectedEdge<string | number | symbol>('A', 'B', 5),
-            new DirectedEdge<string | number | symbol>('A', 'D', 9),
+            new DirectedEdge<string | number | symbol>('A', 'E', 9),
             new DirectedEdge<string | number | symbol>('A', 'H', 8),
             new DirectedEdge<string | number | symbol>('B', 'C', 12),
             new DirectedEdge<string | number | symbol>('B', 'D', 15),
