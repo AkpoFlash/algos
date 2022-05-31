@@ -1,3 +1,4 @@
+export * from './bellmanFordSearch';
 export * from './breadthFirstSearch';
 export * from './depthFirstSearch';
 export * from './kruskalsSearch';

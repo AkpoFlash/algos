@@ -37,6 +37,7 @@
 - [Prims's algorithm (Finding minimal spanning tree (MST))](./src/main/searches/primsSearch.ts)
 - [Dijkstra's algorithm (Finding shortest path in directed weigthed graph)](./src/main/searches/dijkstraSearch.ts)
 - [Topological short path algorithm (Finding shortest path in directed weigthed graph)](./src/main/searches/topologicalShortPathSearch.ts)
+- [Bellman-Ford algorithm (Finding shortest path in directed weigthed graph)](./src/main/searches/bellmanFordSearch.ts)
 
 ## Utils
 - [Linear time Shiffling](./src/main/utils/shuffle.ts)
