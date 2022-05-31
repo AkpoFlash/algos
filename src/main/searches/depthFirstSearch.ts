@@ -13,7 +13,7 @@ export class DepthFirstSearch<T extends string | number | symbol> {
     }
 
     private _dfs = (graph: Graph<T> | Digraph<T>, vertice: T): void => {
-        const adjacent = graph.adjacent(vertice) || [];
+        const adjacent = graph.adjacentVertices(vertice) || [];
         this._marked.set(vertice, true);
 
         for (let i = 0; i < adjacent.length; i++) {

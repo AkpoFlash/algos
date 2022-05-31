@@ -20,7 +20,7 @@ export class StrongConnectedComponent<T extends string | number | symbol> {
         this._marked.set(vertice, true);
         this._id.set(vertice, this._componentCount);
 
-        digraph.adjacent(vertice)?.forEach(v => {
+        digraph.adjacentVertices(vertice)?.forEach(v => {
             if (!this._marked.get(v)) {
                 this._dfs(digraph, v)
             }

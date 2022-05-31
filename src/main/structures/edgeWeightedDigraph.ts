@@ -23,6 +23,11 @@ export class EdgeWeightedDigraph<T extends string | number | symbol> {
     public adjacentEdges = (vertice: T): DirectedEdge<T>[] | undefined => {
         return this.adjacentList.get(vertice);
     }
+
+    public adjacentVertices = (vertice: T): T[] | undefined => {
+        const edges = this.adjacentList.get(vertice);
+        return edges?.map(edge => edge.to());
+    }
 }
 
 

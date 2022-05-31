@@ -1,6 +1,6 @@
 export interface IGraph<T> {
     addEdge: (verticle1: T, verticle2: T) => void;
-    adjacent: (vertice: T) => T[] | undefined;
+    adjacentVertices: (vertice: T) => T[] | undefined;
     vertices: T[];
     countOfVertices: number;
     countOfEdges: number;
@@ -27,7 +27,7 @@ export class Graph<T extends string | number | symbol> implements IGraph<T> {
         this.countOfVertices = vertices.length;
     }
 
-    adjacent = (vertice: T): T[] | undefined => {
+    adjacentVertices = (vertice: T): T[] | undefined => {
         return this.adjacentList.get(vertice);
     }
 
@@ -57,16 +57,16 @@ export class Graph<T extends string | number | symbol> implements IGraph<T> {
 // graph.addEdge(9, 12);
 // graph.addEdge(11, 12);
 
-// graph.adjacent(0) // -> [ 1, 2, 6, 5 ]
-// graph.adjacent(1) // -> [ 0 ]
-// graph.adjacent(2) // -> [ 0 ]
-// graph.adjacent(3) // -> [ 4 ]
-// graph.adjacent(4) // -> [ 6, 3, 5 ]
-// graph.adjacent(5) // -> [ 4, 0 ]
-// graph.adjacent(6) // -> [ 0, 4 ]
-// graph.adjacent(7) // -> [ 8 ]
-// graph.adjacent(8) // -> [ 7 ]
-// graph.adjacent(9) // -> [ 10, 11, 12 ]
-// graph.adjacent(10) // -> [ 9 ]
-// graph.adjacent(11) // -> [ 9, 12 ]
-// graph.adjacent(12) // -> [ 9, 11 ]
+// graph.adjacentVertices(0) // -> [ 1, 2, 6, 5 ]
+// graph.adjacentVertices(1) // -> [ 0 ]
+// graph.adjacentVertices(2) // -> [ 0 ]
+// graph.adjacentVertices(3) // -> [ 4 ]
+// graph.adjacentVertices(4) // -> [ 6, 3, 5 ]
+// graph.adjacentVertices(5) // -> [ 4, 0 ]
+// graph.adjacentVertices(6) // -> [ 0, 4 ]
+// graph.adjacentVertices(7) // -> [ 8 ]
+// graph.adjacentVertices(8) // -> [ 7 ]
+// graph.adjacentVertices(9) // -> [ 10, 11, 12 ]
+// graph.adjacentVertices(10) // -> [ 9 ]
+// graph.adjacentVertices(11) // -> [ 9, 12 ]
+// graph.adjacentVertices(12) // -> [ 9, 11 ]

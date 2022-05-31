@@ -1,10 +1,10 @@
-import { Digraph, Graph } from "../structures";
+import { Digraph, EdgeWeightedDigraph, EdgeWeightedGraph, Graph } from "../structures";
 
 export class DepthFirstOrder<T extends string | number | symbol> {
     private _marked: Map<T, boolean> = new Map();
     private _reverseOrder: T[] = [];
 
-    constructor(graph: Graph<T> | Digraph<T>) {
+    constructor(graph: Graph<T> | Digraph<T> | EdgeWeightedGraph<T> | EdgeWeightedDigraph<T>) {
         const vertices = graph.vertices;
         for (let i = 0; i < vertices.length; i++) {
             if (!this._marked.has(vertices[i])) {
@@ -13,8 +13,8 @@ export class DepthFirstOrder<T extends string | number | symbol> {
         }
     }
 
-    private _dfs = (graph: Graph<T> | Digraph<T>, vertice: T): void => {
-        const adjacent = graph.adjacent(vertice) || [];
+    private _dfs = (graph: Graph<T> | Digraph<T> | EdgeWeightedGraph<T> | EdgeWeightedDigraph<T>, vertice: T): void => {
+        const adjacent = graph.adjacentVertices(vertice) || [];
         this._marked.set(vertice, true);
 
         for (let i = 0; i < adjacent.length; i++) {

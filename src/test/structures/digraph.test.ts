@@ -19,13 +19,13 @@ describe('digraph', () => {
     it.each(DIGRAPH_TEST_DATA)('should give adjacent properly', ({ vertices, edgesPairs, adjacents }) => {
         const digraph = new Digraph(vertices);
         edgesPairs.forEach(edge => digraph.addEdge(...edge));
-        vertices.forEach(vertice => expect(digraph.adjacent(vertice)).toEqual(adjacents[vertice]));
+        vertices.forEach(vertice => expect(digraph.adjacentVertices(vertice)).toEqual(adjacents[vertice]));
     });
 
     it.each(DIGRAPH_TEST_DATA)('should give reversed adjacent properly', ({ vertices, edgesPairs, adjacentsReversed }) => {
         let digraph = new Digraph(vertices);
         edgesPairs.forEach(edge => digraph.addEdge(...edge));
         digraph = digraph.reverse();
-        vertices.forEach(vertice => expect(digraph.adjacent(vertice)).toEqual(adjacentsReversed[vertice]));
+        vertices.forEach(vertice => expect(digraph.adjacentVertices(vertice)).toEqual(adjacentsReversed[vertice]));
     });
 })

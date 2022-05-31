@@ -18,7 +18,7 @@ export class ConnectedComponent<T extends string | number | symbol> {
         this._marked.set(vertice, true);
         this._id.set(vertice, this._componentCount);
 
-        graph.adjacent(vertice)?.forEach(v => {
+        graph.adjacentVertices(vertice)?.forEach(v => {
             if (!this._marked.get(v)) {
                 this._dfs(graph, v)
             }

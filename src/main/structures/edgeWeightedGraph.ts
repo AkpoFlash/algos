@@ -26,6 +26,11 @@ export class EdgeWeightedGraph<T extends string | number | symbol> {
     public adjacentEdges = (vertice: T): Edge<T>[] | undefined => {
         return this.adjacentList.get(vertice);
     }
+
+    public adjacentVertices = (vertice: T): T[] | undefined => {
+        const edges = this.adjacentList.get(vertice);
+        return edges?.map(edge => edge.other(vertice));
+    }
 }
 
 

@@ -19,7 +19,7 @@ export class BreadthFirstSearch<T extends string | number | symbol> {
 
         while (!queue.isEmpty()) {
             const v = queue.dequeue()!;
-            const adjacents = graph.adjacent(v) || [];
+            const adjacents = graph.adjacentVertices(v) || [];
 
             for (let i = 0; i < adjacents.length; i++) {
                 if (!this._marked.has(adjacents[i])) {

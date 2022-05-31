@@ -1,6 +1,6 @@
 export interface IDigraph<T extends string | number | symbol> {
     addEdge: (verticle1: T, verticle2: T) => void;
-    adjacent: (vertice: T) => T[] | undefined;
+    adjacentVertices: (vertice: T) => T[] | undefined;
     vertices: T[];
     countOfVertices: number;
     countOfEdges: number;
@@ -28,7 +28,7 @@ export class Digraph<T extends string | number | symbol> implements IDigraph<T> 
         this.countOfVertices = vertices.length;
     }
 
-    adjacent = (vertice: T): T[] | undefined => {
+    adjacentVertices = (vertice: T): T[] | undefined => {
         return this.adjacentList.get(vertice);
     }
 
@@ -66,16 +66,16 @@ export class Digraph<T extends string | number | symbol> implements IDigraph<T> 
 // digraph.addEdge(9, 12);
 // digraph.addEdge(11, 12);
 
-// digraph.adjacent(0) // -> [ 1, 2, 6 ]
-// digraph.adjacent(1) // -> [ ]
-// digraph.adjacent(2) // -> [ ]
-// digraph.adjacent(3) // -> [ ]
-// digraph.adjacent(4) // -> [ 3, 5 ]
-// digraph.adjacent(5) // -> [ 0 ]
-// digraph.adjacent(6) // -> [ 4 ]
-// digraph.adjacent(7) // -> [ 8 ]
-// digraph.adjacent(8) // -> [ ]
-// digraph.adjacent(9) // -> [ 10, 11, 12 ]
-// digraph.adjacent(10) // -> [ ]
-// digraph.adjacent(11) // -> [ 12 ]
-// digraph.adjacent(12) // -> [ ]
+// digraph.adjacentVertices(0) // -> [ 1, 2, 6 ]
+// digraph.adjacentVertices(1) // -> [ ]
+// digraph.adjacentVertices(2) // -> [ ]
+// digraph.adjacentVertices(3) // -> [ ]
+// digraph.adjacentVertices(4) // -> [ 3, 5 ]
+// digraph.adjacentVertices(5) // -> [ 0 ]
+// digraph.adjacentVertices(6) // -> [ 4 ]
+// digraph.adjacentVertices(7) // -> [ 8 ]
+// digraph.adjacentVertices(8) // -> [ ]
+// digraph.adjacentVertices(9) // -> [ 10, 11, 12 ]
+// digraph.adjacentVertices(10) // -> [ ]
+// digraph.adjacentVertices(11) // -> [ 12 ]
+// digraph.adjacentVertices(12) // -> [ ]

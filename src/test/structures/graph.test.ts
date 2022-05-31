@@ -19,6 +19,6 @@ describe('graph', () => {
     it.each(GRAPH_TEST_DATA)('should give adjacent properly', ({ vertices, edgesPairs, adjacents }) => {
         const graph = new Graph(vertices);
         edgesPairs.forEach(edge => graph.addEdge(...edge));
-        vertices.forEach(vertice => expect(graph.adjacent(vertice)).toEqual(adjacents[vertice]));
+        vertices.forEach(vertice => expect(graph.adjacentVertices(vertice)).toEqual(adjacents[vertice]));
     });
 })
