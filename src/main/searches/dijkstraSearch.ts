@@ -11,8 +11,6 @@ import { DirectedEdge, EdgeWeightedDigraph } from "../structures";
  * - Repeat until all edges would be relaxing
  */
 export class DijkstraSearch<T extends string | number | symbol> {
-    // tip: instead of using unsorted array and get (~(E*V))
-    // we may use IndexedMinQueue (priority queue (heap) with possibility to change the order) and get (~(E*logV))
     private _edgeTo: Map<T, DirectedEdge<T>> = new Map();
     private _adjacentVertices: Map<T, number> = new Map();
     private _distanceTo: Map<T, number> = new Map();
