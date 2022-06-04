@@ -5,7 +5,7 @@
  * @constructor receive only distinct values 
  */
 export class EdgeWeightedDigraph<T extends string | number | symbol> {
-    private adjacentList: Map<T, DirectedEdge<T>[]> = new Map();
+    private _adjacentList: Map<T, DirectedEdge<T>[]> = new Map();
     public edges: DirectedEdge<T>[] = [];
     public vertices: T[];
 
@@ -15,17 +15,17 @@ export class EdgeWeightedDigraph<T extends string | number | symbol> {
 
     public addEdge = (edge: DirectedEdge<T>): void => {
         const from = edge.from();
-        const prev = this.adjacentList.get(from) || [];
-        this.adjacentList.set(from, [...prev, edge]);
+        const prev = this._adjacentList.get(from) || [];
+        this._adjacentList.set(from, [...prev, edge]);
         this.edges.push(edge);
     }
 
     public adjacentEdges = (vertice: T): DirectedEdge<T>[] | undefined => {
-        return this.adjacentList.get(vertice);
+        return this._adjacentList.get(vertice);
     }
 
     public adjacentVertices = (vertice: T): T[] | undefined => {
-        const edges = this.adjacentList.get(vertice);
+        const edges = this._adjacentList.get(vertice);
         return edges?.map(edge => edge.to());
     }
 }
@@ -34,12 +34,12 @@ export class EdgeWeightedDigraph<T extends string | number | symbol> {
 export class DirectedEdge<T> {
     private readonly _from: T;
     private readonly _to: T;
-    private readonly weight: number;
+    private readonly _weight: number;
 
     constructor(from: T, to: T, weight: number) {
         this._from = from;
         this._to = to;
-        this.weight = weight;
+        this._weight = weight;
     }
 
     public from = (): T => {
@@ -51,7 +51,7 @@ export class DirectedEdge<T> {
     }
 
     public getWeight = (): number => {
-        return this.weight;
+        return this._weight;
     }
 }
 

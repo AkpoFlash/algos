@@ -5,7 +5,7 @@
  * @constructor receive only distinct values 
  */
 export class EdgeWeightedGraph<T extends string | number | symbol> {
-    private adjacentList: Map<T, Edge<T>[]> = new Map();
+    private _adjacentList: Map<T, Edge<T>[]> = new Map();
     public edges: Edge<T>[] = [];
     public vertices: T[];
 
@@ -16,48 +16,48 @@ export class EdgeWeightedGraph<T extends string | number | symbol> {
     public addEdge = (edge: Edge<T>): void => {
         const verticle1 = edge.either();
         const verticle2 = edge.other(verticle1);
-        const prev1 = this.adjacentList.get(verticle1) || [];
-        const prev2 = this.adjacentList.get(verticle2) || [];
-        this.adjacentList.set(verticle1, [...prev1, edge]);
-        this.adjacentList.set(verticle2, [...prev2, edge]);
+        const prev1 = this._adjacentList.get(verticle1) || [];
+        const prev2 = this._adjacentList.get(verticle2) || [];
+        this._adjacentList.set(verticle1, [...prev1, edge]);
+        this._adjacentList.set(verticle2, [...prev2, edge]);
         this.edges.push(edge);
     }
 
     public adjacentEdges = (vertice: T): Edge<T>[] | undefined => {
-        return this.adjacentList.get(vertice);
+        return this._adjacentList.get(vertice);
     }
 
     public adjacentVertices = (vertice: T): T[] | undefined => {
-        const edges = this.adjacentList.get(vertice);
+        const edges = this._adjacentList.get(vertice);
         return edges?.map(edge => edge.other(vertice));
     }
 }
 
 
 export class Edge<T> {
-    private readonly v: T;
-    private readonly w: T;
-    private readonly weight: number;
+    private readonly _v: T;
+    private readonly _w: T;
+    private readonly _weight: number;
 
     constructor(v: T, w: T, weight: number) {
-        this.v = v;
-        this.w = w;
-        this.weight = weight;
+        this._v = v;
+        this._w = w;
+        this._weight = weight;
     }
 
     public either = (): T => {
-        return this.v;
+        return this._v;
     }
 
     public other = (v: T): T => {
-        if (this.v === v) {
-            return this.w;
+        if (this._v === v) {
+            return this._w;
         }
-        return this.v;
+        return this._v;
     }
 
     public getWeight = (): number => {
-        return this.weight;
+        return this._weight;
     }
 }
 

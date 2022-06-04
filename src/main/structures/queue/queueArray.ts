@@ -1,14 +1,14 @@
 export class QueueArray<T> {
-    queue: (T | undefined)[] = [];
-    lo = 0;
-    hi = 0;
+    public queue: (T | undefined)[] = [];
+    private _lo = 0;
+    private _hi = 0;
 
     public isEmpty(): boolean {
-        return this.hi - this.lo === 0;
+        return this._hi - this._lo === 0;
     }
 
     public enqueue(item: T): void {
-        this.queue[this.hi++] = item;
+        this.queue[this._hi++] = item;
     }
 
     public dequeue(): T | undefined {
@@ -16,18 +16,18 @@ export class QueueArray<T> {
             return;
         }
 
-        const item = this.queue[this.lo];
-        this.queue[this.lo++] = undefined;
+        const item = this.queue[this._lo];
+        this.queue[this._lo++] = undefined;
 
-        this.simpleRebalanceArray();
+        this._simpleRebalanceArray();
 
         return item;
     }
 
-    private simpleRebalanceArray(): void {
-        if (this.hi - this.lo === 0) {
-            this.lo = 0;
-            this.hi = 0;
+    private _simpleRebalanceArray(): void {
+        if (this._hi - this._lo === 0) {
+            this._lo = 0;
+            this._hi = 0;
             this.queue = [];
         }
     }

@@ -17,31 +17,31 @@ export interface IDigraph<T extends string | number | symbol> {
  * @field countOfEdges count duplicated edges
  */
 export class Digraph<T extends string | number | symbol> implements IDigraph<T> {
-    private adjacentList: Map<T, T[]> = new Map();
+    private _adjacentList: Map<T, T[]> = new Map();
     public countOfVertices = 0;
     public vertices: T[] = [];
     public countOfEdges = 0;
 
     constructor(vertices: T[]) {
         this.vertices = vertices;
-        vertices.forEach(item => this.adjacentList.set(item, []));
+        vertices.forEach(item => this._adjacentList.set(item, []));
         this.countOfVertices = vertices.length;
     }
 
-    adjacentVertices = (vertice: T): T[] | undefined => {
-        return this.adjacentList.get(vertice);
+    public adjacentVertices = (vertice: T): T[] | undefined => {
+        return this._adjacentList.get(vertice);
     }
 
-    addEdge = (verticle1: T, verticle2: T): void => {
-        const prev = this.adjacentList.get(verticle1) || [];
-        this.adjacentList.set(verticle1, [...prev, verticle2]);
+    public addEdge = (verticle1: T, verticle2: T): void => {
+        const prev = this._adjacentList.get(verticle1) || [];
+        this._adjacentList.set(verticle1, [...prev, verticle2]);
         this.countOfEdges++;
     }
 
-    reverse = (): Digraph<T> => {
+    public reverse = (): Digraph<T> => {
         const digraphReversed = new Digraph(this.vertices);
 
-        for (let vertice of this.adjacentList) {
+        for (let vertice of this._adjacentList) {
             vertice[1].forEach(adjacent => digraphReversed.addEdge(adjacent, vertice[0]));
         }
 

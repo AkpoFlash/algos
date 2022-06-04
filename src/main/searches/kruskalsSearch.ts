@@ -11,17 +11,17 @@ import { Edge, EdgeWeightedGraph, QuickFind } from "../structures";
  * - Repeat until reach V - 1 edges into MST
  */
 export class KruskalSearch<T extends string | number | symbol> {
-    private sortedEdges: Edge<T>[];
+    private _sortedEdges: Edge<T>[];
     public mst: Edge<T>[] = [];
     public totalDistance: number = 0;
 
     constructor(graph: EdgeWeightedGraph<T>) {
         // sort in descending order for use .pop() method instead of .shift()
-        this.sortedEdges = [...graph.edges].sort((a, b) => b.getWeight() - a.getWeight());
+        this._sortedEdges = [...graph.edges].sort((a, b) => b.getWeight() - a.getWeight());
 
         const qf = new QuickFind(graph.vertices);
-        while (this.sortedEdges.length && this.mst.length < graph.vertices.length - 1) {
-            const edge = this.sortedEdges.pop()!;
+        while (this._sortedEdges.length && this.mst.length < graph.vertices.length - 1) {
+            const edge = this._sortedEdges.pop()!;
             const v = edge.either();
             const w = edge.other(v);
 

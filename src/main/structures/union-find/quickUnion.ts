@@ -2,7 +2,7 @@ export class QuickUnion {
     // this is array which contain the components IDs
     // (component it is the entity with connected nodes)
     private _ids: number[] = [];
-    size: number[] = [];
+    public size: number[] = [];
 
     constructor(n: number) {
         for (let i = 0; i < n; i++) {
@@ -11,7 +11,7 @@ export class QuickUnion {
         }
     }
 
-    private root(i: number): number {
+    private _root(i: number): number {
         while (i != this._ids[i]) {
             // here is the interesting trick
             // the line below compress the tree and maintained the smallest possible tree
@@ -22,14 +22,14 @@ export class QuickUnion {
     }
 
     public connected(a: number, b: number): boolean {
-        const rootA = this.root(a);
-        const rootB = this.root(b);
+        const rootA = this._root(a);
+        const rootB = this._root(b);
         return rootA === rootB;
     }
 
     public union(a: number, b: number): void {
-        const rootA = this.root(a);
-        const rootB = this.root(b);
+        const rootA = this._root(a);
+        const rootB = this._root(b);
 
         // simple solution just assign new root
         // `this.ids[rootB] = rootA;`

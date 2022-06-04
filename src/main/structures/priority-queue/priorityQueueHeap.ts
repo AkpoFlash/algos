@@ -2,10 +2,10 @@
  * Heap priority queue give us logarithmic (~logN) @method insert and logarithmic (~logN) @method deleteMax
  */
 export class PriorityQueueHeap<T> {
-    queue: T[] = [];
-    size = 0;
+    public queue: T[] = [];
+    public size = 0;
 
-    private sink = (index: number): void => {
+    private _sink = (index: number): void => {
         const maxIndex = this.size - 1;
 
         while (index * 2 <= maxIndex) {
@@ -27,11 +27,11 @@ export class PriorityQueueHeap<T> {
 
     }
 
-    private swim = (index: number): void => {
+    private _swim = (index: number): void => {
         const parentIndex = Math.floor(index / 2);
         if (this.queue[parentIndex] < this.queue[index]) {
             [this.queue[parentIndex], this.queue[index]] = [this.queue[index], this.queue[parentIndex]];
-            this.swim(parentIndex);
+            this._swim(parentIndex);
         }
     }
 
@@ -41,7 +41,7 @@ export class PriorityQueueHeap<T> {
 
     public insert = (value: T): void => {
         this.queue[this.size] = value;
-        this.swim(this.size);
+        this._swim(this.size);
         this.size = this.size + 1;
     }
 
@@ -54,7 +54,7 @@ export class PriorityQueueHeap<T> {
         this.size = this.size - 1;
         [this.queue[0], this.queue[this.size]] = [this.queue[this.size], this.queue[0]];
         this.queue[this.size] = undefined!;
-        this.sink(0);
+        this._sink(0);
 
         return result;
     }
