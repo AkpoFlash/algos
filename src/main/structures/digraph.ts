@@ -1,5 +1,5 @@
 export interface IDigraph<T extends string | number | symbol> {
-    addEdge: (verticle1: T, verticle2: T) => void;
+    addEdge: (vertice1: T, vertice2: T) => void;
     adjacentVertices: (vertice: T) => T[] | undefined;
     vertices: T[];
     countOfVertices: number;
@@ -32,9 +32,9 @@ export class Digraph<T extends string | number | symbol> implements IDigraph<T> 
         return this._adjacentList.get(vertice);
     }
 
-    public addEdge = (verticle1: T, verticle2: T): void => {
-        const prev = this._adjacentList.get(verticle1) || [];
-        this._adjacentList.set(verticle1, [...prev, verticle2]);
+    public addEdge = (vertice1: T, vertice2: T): void => {
+        const prev = this._adjacentList.get(vertice1) || [];
+        this._adjacentList.set(vertice1, [...prev, vertice2]);
         this.countOfEdges++;
     }
 

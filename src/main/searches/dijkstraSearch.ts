@@ -53,17 +53,17 @@ export class DijkstraSearch<T extends string | number | symbol> {
     }
 
     private _removeNearestVertice = (): T | undefined => {
-        let verticleMin: T | undefined = undefined;
-        let verticleWeigth = Infinity;
+        let verticeMin: T | undefined = undefined;
+        let verticeWeigth = Infinity;
 
         for (const [vertice, weigth] of this._adjacentVertices) {
-            if (weigth < verticleWeigth) {
-                verticleMin = vertice;
+            if (weigth < verticeWeigth) {
+                verticeMin = vertice;
             }
         }
-        if (verticleMin !== undefined) {
-            this._adjacentVertices.delete(verticleMin);
-            return verticleMin;
+        if (verticeMin !== undefined) {
+            this._adjacentVertices.delete(verticeMin);
+            return verticeMin;
         }
     }
 

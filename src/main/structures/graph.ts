@@ -1,5 +1,5 @@
 export interface IGraph<T> {
-    addEdge: (verticle1: T, verticle2: T) => void;
+    addEdge: (vertice1: T, vertice2: T) => void;
     adjacentVertices: (vertice: T) => T[] | undefined;
     vertices: T[];
     countOfVertices: number;
@@ -31,11 +31,11 @@ export class Graph<T extends string | number | symbol> implements IGraph<T> {
         return this.adjacentList.get(vertice);
     }
 
-    addEdge = (verticle1: T, verticle2: T): void => {
-        const prev1 = this.adjacentList.get(verticle1) || [];
-        const prev2 = this.adjacentList.get(verticle2) || [];
-        this.adjacentList.set(verticle1, [...prev1, verticle2]);
-        this.adjacentList.set(verticle2, [...prev2, verticle1]);
+    addEdge = (vertice1: T, vertice2: T): void => {
+        const prev1 = this.adjacentList.get(vertice1) || [];
+        const prev2 = this.adjacentList.get(vertice2) || [];
+        this.adjacentList.set(vertice1, [...prev1, vertice2]);
+        this.adjacentList.set(vertice2, [...prev2, vertice1]);
         this.countOfEdges++;
     }
 }

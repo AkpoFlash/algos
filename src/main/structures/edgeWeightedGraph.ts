@@ -14,12 +14,12 @@ export class EdgeWeightedGraph<T extends string | number | symbol> {
     }
 
     public addEdge = (edge: Edge<T>): void => {
-        const verticle1 = edge.either();
-        const verticle2 = edge.other(verticle1);
-        const prev1 = this._adjacentList.get(verticle1) || [];
-        const prev2 = this._adjacentList.get(verticle2) || [];
-        this._adjacentList.set(verticle1, [...prev1, edge]);
-        this._adjacentList.set(verticle2, [...prev2, edge]);
+        const vertice1 = edge.either();
+        const vertice2 = edge.other(vertice1);
+        const prev1 = this._adjacentList.get(vertice1) || [];
+        const prev2 = this._adjacentList.get(vertice2) || [];
+        this._adjacentList.set(vertice1, [...prev1, edge]);
+        this._adjacentList.set(vertice2, [...prev2, edge]);
         this.edges.push(edge);
     }
 
