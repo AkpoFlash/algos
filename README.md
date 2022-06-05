@@ -39,6 +39,7 @@
 - [Dijkstra's algorithm (Finding shortest path in directed weigthed graph)](./src/main/searches/dijkstraSearch.ts)
 - [Topological short path algorithm (Finding shortest path in directed weigthed graph)](./src/main/searches/topologicalShortPathSearch.ts)
 - [Bellman-Ford algorithm (Finding shortest path in directed weigthed graph)](./src/main/searches/bellmanFordSearch.ts)
+- [Ford-Fulkerson algorithm (Max flow / Min cut)](./src/main/searches/fordFulkersonSearch.ts)
 
 ## Utils
 - [Linear time Shiffling](./src/main/utils/shuffle.ts)
