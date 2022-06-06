@@ -10,6 +10,7 @@
 - [Heap sort](./src/main/sorts/heapSort.ts)
 - [Topological sort (Depth-first order)](./src/main/sorts/topologicalSort.ts)
 - [Radix sort](./src/main/sorts/radix/radixSort.ts)
+- [LSD sort (Least-significant-digit-first - based on radix sort)](./src/main/sorts/radix/lsdSort.ts)
 
 ## Structures
 - [Union-find (Quick find)](./src/main/structures/union-find/quick-find.ts)
