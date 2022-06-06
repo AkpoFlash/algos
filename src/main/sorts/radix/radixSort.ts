@@ -1,17 +1,18 @@
 /**
  * This sort is stable, time complexity of this sort ~(2N + A)
  * 
- * @param _arr init unsorted array
+ * @param initArr init unsorted array
+ * @param alphabet available symbols for sorting
  * @returns sorted array
  */
-export const radixSort = <T extends string | number | symbol>(_arr: T[], alphabet: T[]): T[] => {
-    const len = _arr.length;
+export const radixSort = <T extends string | number | symbol>(initArr: T[], alphabet: T[]): T[] => {
+    const len = initArr.length;
     const aux = [] as T[];
     const countMap: Map<T, number> = new Map(alphabet.map(char => [char, 0]));
 
     for (let i = 0; i < len; i++) {
-        const count = countMap.get(_arr[i]) ?? 1;
-        countMap.set(_arr[i], count + 1);
+        const count = countMap.get(initArr[i]) ?? 0;
+        countMap.set(initArr[i], count + 1);
     }
 
     let acc = 0;
@@ -22,9 +23,9 @@ export const radixSort = <T extends string | number | symbol>(_arr: T[], alphabe
     }
 
     for (let i = 0; i < len; i++) {
-        const count = countMap.get(_arr[i])!;
-        aux[count] = _arr[i];
-        countMap.set(_arr[i], count + 1);
+        const count = countMap.get(initArr[i])!;
+        aux[count] = initArr[i];
+        countMap.set(initArr[i], count + 1);
     }
 
     return aux;
