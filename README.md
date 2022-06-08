@@ -32,6 +32,7 @@
 - [Strong connected component with DFS](./src/main/structures/strongConnectedComponent.ts)
 - [Flow graph (Flow Network)](./src/main/structures/flowGraph.ts)
 - [Trie (R-way)](./src/main/structures/trie/trie.ts)
+- [Ternary trie (Sedgewick approach)](./src/main/structures/trie/ternaryTrie.ts)
 
 ## Searches
 - [Quick select (Kth smallest find)](./src/main/searches/quickSelect.ts)
