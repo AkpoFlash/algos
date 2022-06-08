@@ -2,6 +2,12 @@
  * This algorithm quite efficient for search (@method get) and insert (@method put) both take (~L) time,
  * but this implementation takes a lot of memory in languages where you need define size of array explicit
  * In that case the size of each node equal to the alphabet size
+ * 
+ * Todo: here is possible to implement the next methods:
+ *  { @method keys() }
+ *  { @method keysWithPrefix(prefix: string) }
+ *  { @method keysThatMatch(matchStr: string)}
+ *  { @method longestPrefixOf(str: string)}
  */
 export class Trie<T> {
     private _root = new Node<T>();
