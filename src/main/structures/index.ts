@@ -1,6 +1,7 @@
 export * from './priority-queue';
 export * from './queue';
 export * from './stack';
+export * from './trie';
 export * from './union-find';
 
 export * from './digraph';
